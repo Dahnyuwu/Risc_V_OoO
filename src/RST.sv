@@ -1,6 +1,6 @@
 module RST(
     input   logic   [4:0]   rs1_add, rs2_add,
-    input   logic           w_data_ena1, w_data_ena2,
+    input   logic           w_data_ena1, w_data_ena2, clk, rst,
     input   logic   [6:0]   w_data1, w_data2,               // No estoy seguro si este incluya los bit de valido o alguien más lo modifica
     output  logic   [5:0]   rs1_tag, rs2_tag, 
     output  logic           rs1_tag_va, rs2_tag_va, 

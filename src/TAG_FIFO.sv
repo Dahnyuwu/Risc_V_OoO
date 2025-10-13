@@ -31,7 +31,7 @@ module TAG_FIFO (
             read_p <= 7'b000_0000;
 
         else
-            if (condition)
+            if (r_ena)
                 read_p++;
     end
 
