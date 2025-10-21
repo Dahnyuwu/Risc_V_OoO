@@ -1,19 +1,22 @@
 module TAG_FIFO (
 // Inputs
-    input   logic           clk, rst, r_ena, cdb_tag_va,
+    input   logic           clk, rst, cdb_tag_va,
     input   logic   [5:0]   cdb_tag,
+    input   logic   [4:0]   rd,
 
 // Outputs 
-    output  logic           full, empty,
+    output  logic           full, empty, rd_va,
     output  logic   [5:0]   tag_out
 );
 
     logic   [5:0]   tag_table[63:0];
     logic   [6:0]   write_p, read_p;
+    logic   [63:0]  WEROut;
 
-    assign  WEROut  = (cdb_tag_va && write_p[5:0] < 32) ? (32'b1 << cdb_tag_va) : 32'b0;        // Write enable para el TAG dependiendo si es un cdb valido
-    assign  tag_out = r_ena ? tag_table[read_p[5:0]] : 6'b0;                                    // Si r_ena habilita la salida del TAG en read_p 
+    assign  WEROut  = (cdb_tag_va && write_p[5:0] < 64) ? (64'b1 << cdb_tag_va) : 64'b0;        // Write enable para el TAG dependiendo si es un cdb valido
+    assign  tag_out = rd_va ? tag_table[read_p[5:0]] : 6'b0;                                    // Si r_ena habilita la salida del TAG en read_p 
 
+    assign rd_va    = rd ? 1'b1: 1'b0;
 
 // Pointers for FIFO (Read & Write)
     // After reset the FIFO is full due to write_p =  ->1<- 00_0000
@@ -31,7 +34,7 @@ module TAG_FIFO (
             read_p <= 7'b000_0000;
 
         else
-            if (r_ena)
+            if (rd_va)
                 read_p++;
     end
 

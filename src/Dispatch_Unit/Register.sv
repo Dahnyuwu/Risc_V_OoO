@@ -13,11 +13,11 @@
 
 module Register #(parameter LENGTH = 32, RSTVALUE = 32'b0)(
 // Inputs
-    input   wire    [(LENGTH-1):0]      in,
-    input   wire                        clk, rst, ena,
+    input   logic    [(LENGTH-1):0]      in,
+    input   logic                        clk, rst, ena,
     
 // Outputs    
-    output  wire     [(LENGTH-1):0]      out
+    output  logic     [(LENGTH-1):0]      out
 );
 
     always @(posedge clk) begin
@@ -38,11 +38,11 @@ endmodule
 // Double write
 module Register_DW #(parameter LENGTH = 32, RSTVALUE = 32'b0)(
 // Inputs
-    input   wire    [(LENGTH-1):0]      in_1, in_2
-    input   wire                        clk, rst, ena_1, ena_2,
+    input   logic    [(LENGTH-1):0]      in_1, in_2,
+    input   logic                        clk, rst, ena_1, ena_2,
     
 // Outputs    
-    output  wire     [(LENGTH-1):0]      out
+    output  logic     [(LENGTH-1):0]      out
 );
 
     always @(posedge clk) begin
