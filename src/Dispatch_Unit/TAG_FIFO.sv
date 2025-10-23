@@ -1,6 +1,7 @@
 module TAG_FIFO (
 // Inputs
-    input   logic           clk, rst, cdb_tag_va,
+    input   logic           clk, rst,
+    input   logic           cdb_tag_va,
     input   logic   [5:0]   cdb_tag,
     input   logic   [4:0]   rd,
 

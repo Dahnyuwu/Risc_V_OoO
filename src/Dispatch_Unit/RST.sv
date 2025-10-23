@@ -1,14 +1,13 @@
 module RST(
 // Input
+    input   logic           clk, rst,
+    input   logic   [6:0]   w_data1, cdb_token,  
     input   logic   [4:0]   rs1_add, rs2_add, rd_add_in,
-    input   logic           w_data_ena1, clk, rst,
-    input   logic   [6:0]   w_data1,           
-    input   logic   [6:0]   cdb_token,           
+    input   logic           w_data_ena1,
     
 // Output
     output  logic   [31:0]  w_ena_2,
-    output  logic   [5:0]   rs1_tag, rs2_tag, 
-    output  logic   [5:0]   rd_add_out,
+    output  logic   [5:0]   rs1_tag, rs2_tag, rd_add_out,
     output  logic           rs1_tag_va, rs2_tag_va
 
 );

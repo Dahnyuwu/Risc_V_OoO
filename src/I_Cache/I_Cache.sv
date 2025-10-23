@@ -11,12 +11,15 @@
 
 module I_Cache (
 // Inputs
-    input   logic   [7:0]  PC_in,
-    input   logic          clk, rd_en,
+    input   logic          clk,
 
-// Outputs
-    output  logic           rd_va,
-    output  logic   [127:0] rd
+// Inputs IFQ
+    input   logic   [7:0]  ifq_PC_in,
+    input   logic          ifq_rd_en,
+
+// Outputs to IFQ
+    output  logic           icache_rd_va,
+    output  logic   [127:0] icache_rd
 );
 
     logic [16:0] inst_0, inst_1, inst_2, inst_3;  
@@ -27,13 +30,13 @@ module I_Cache (
     initial
         $readmemh("xd.txt", rom);                             // Load binary data from UART_RXTX.txt file
     
-    assign rd       = rd_en ? rom[PC_in] : 128'h0;
-    assign rd_va    = inst_0_va & inst_1_va & inst_2_va & inst_3_va;
+    assign icache_rd       = ifq_rd_en ? rom[ifq_PC_in] : 128'h0;
+    assign icache_rd_va    = inst_0_va & inst_1_va & inst_2_va & inst_3_va;
 
-    assign inst_0 = {rd[6:0],       rd[14:12],       rd[31:25]};
-    assign inst_1 = {rd[6+32:0+32], rd[14+32:12+32], rd[31+32:25+32]};
-    assign inst_2 = {rd[6+64:0+64], rd[14+64:12+64], rd[31+64:25+64]};
-    assign inst_3 = {rd[6+96:0+96], rd[14+96:12+96], rd[31+96:25+96]};
+    assign inst_0 = {icache_rd[6:0],       icache_rd[14:12],       icache_rd[31:25]};
+    assign inst_1 = {icache_rd[6+32:0+32], icache_rd[14+32:12+32], icache_rd[31+32:25+32]};
+    assign inst_2 = {icache_rd[6+64:0+64], icache_rd[14+64:12+64], icache_rd[31+64:25+64]};
+    assign inst_3 = {icache_rd[6+96:0+96], icache_rd[14+96:12+96], icache_rd[31+96:25+96]};
 
     assign inst_0_va    =    ((inst_0 & 17'h1FFFF) == 17'b0110011_000_0000001) ? 1'b1 :
                              ((inst_0 & 17'h1FF80) == 17'b0010011_000_0000000) ? 1'b1 :
