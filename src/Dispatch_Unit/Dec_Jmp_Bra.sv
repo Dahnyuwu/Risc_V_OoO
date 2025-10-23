@@ -3,16 +3,15 @@ module Dec_Jmp_Bra(
     input   logic   [31:0]  inst,
 
 // Outputs    
-    output  logic   [4:0]   rs1, rs2, rd,
+    output  logic   [4:0]   rs1_add, rs2_add, rd_add,
     output  logic   [2:0]   funct3,
     output  logic   [6:0]   funct7, opcode,
-    output  logic           r_ena
+    output  logic   [31:0]  se,
+    output  logic           r_ena, imm_f
 );
 
 // Decoder
     logic [2:0] i_type; // Instruction type assignation
-
-    logic   [31:0] SE;  // Sign extend
 
     localparam [2:0] R = 3'b000;    // Instruction type constant
     localparam [2:0] I = 3'b001;    // Instruction type constant
@@ -31,15 +30,16 @@ module Dec_Jmp_Bra(
                         ((opcode == 7'b0110111) || (opcode == 7'b0010111))                                                      ? U :
                         (opcode == 7'b1101111)                                                                                  ? J :
                                                                                                                                 3'b0;
-    
-    assign  rd      =   ((i_type == R) || (i_type == I) || (i_type == U) || (i_type == J))    ? inst[11:7]  : 5'b0;
-    assign  rs1     =   ((i_type == R) || (i_type == I) || (i_type == S) || (i_type == B))    ? inst[19:15] : 5'b0;
-    assign  rs2     =   ((i_type == R) || (i_type == S) || (i_type == B))                     ? inst[24:20] : 5'b0;
+    assign  imm_f   =   (i_type == I) ? 1'b1: 1'b0;
+
+    assign  rd_add  =   ((i_type == R) || (i_type == I) || (i_type == U) || (i_type == J))    ? inst[11:7]  : 5'b0;
+    assign  rs1_add =   ((i_type == R) || (i_type == I) || (i_type == S) || (i_type == B))    ? inst[19:15] : 5'b0;
+    assign  rs2_add =   ((i_type == R) || (i_type == S) || (i_type == B))                     ? inst[24:20] : 5'b0;
     assign  funct3  =   ((i_type == R) || (i_type == I) || (i_type == S) || (i_type == B))    ? inst[14:12] : 3'b0;
     assign  funct7  =   (i_type == R) ? inst[31:25] : 7'b0;
 
     // Conditional assignment based on instruction opcode (bits 6:0)
-    assign  SE      =   (i_type == R)                               ? 32'b0 :                                                                       // R-type (no immediate)
+    assign  se      =   (i_type == R)                               ? 32'b0 :                                                                       // R-type (no immediate)
                         (i_type == I)                               ? {{20{inst[31]}}, inst[31:20]} :                                             // I-type: Sign extends bit 31 and concatenates with bits 31:20
                         (i_type == S)                               ? {{20{inst[31]}}, inst[31:25], inst[11:7]} :                                // S-type: Sign extends and combines bits 31:25 and 11:7
                         (i_type == B)                               ? {{19{inst[31]}}, inst[31], inst[7], inst[30:25], inst[11:8], 1'b0} :     // B-type: Branch format with LSB set to 0

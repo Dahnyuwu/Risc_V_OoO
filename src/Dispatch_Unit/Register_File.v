@@ -12,20 +12,18 @@
 
 module Register_File(
 // Inputs
-    input   wire    [4:0]   Rr1, Rr2, RdAdd,   
-    input   wire            rw, rst, clk,
-    input   wire    [31:0]  RdDat,   
+    input   wire    [4:0]   rs1_add, rs2_add, rd_add,   
+    input   wire            rst, clk,
+    input   wire    [31:0]  rd_data, WEROut,   
 
 // Outputs
-    output  wire    [31:0]  Rd1, Rd2                                                              
+    output  wire    [31:0]  rs1_data, rs2_data                                                              
 );
     wire    [31:0]  registerOut[31:0];                                                                      
-    wire    [31:0]  WEROut;                                                                                 
 
-    assign  Rd1 = registerOut[Rr1];                                                                  
-    assign  Rd2 = registerOut[Rr2];                                                                  
+    assign  rs1_data = registerOut[rs1_add];                                                                  
+    assign  rs2_data = registerOut[rs2_add];                                                                  
 
-    assign  WEROut = (rw && RdAdd < 32) ? (32'b1 << RdAdd) : 32'b0;
 
     generate
         genvar i;
@@ -46,7 +44,7 @@ module Register_File(
                 Register #(.RSTVALUE(32'hFFFF_FFF0)) RegisterSP(
                     .clk(clk),
                     .rst(rst),
-                    .in(RdDat),
+                    .in(rd_data),
                     .ena(WEROut[i]),
                     .out(registerOut[i])
                 );
@@ -56,7 +54,7 @@ module Register_File(
                 Register Register_file(
                     .clk(clk),
                     .rst(rst),
-                    .in(RdDat),
+                    .in(rd_data),
                     .ena(WEROut[i]),
                     .out(registerOut[i])
                 );
