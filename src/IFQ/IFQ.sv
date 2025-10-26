@@ -16,7 +16,7 @@ module IFQ (
 
     logic [127:0]   I0_out_, I1_out_, I2_out_, I3_out_, row_sel; 
     logic [4:0]     write_p, read_p;
-    logic [31:0]    rd_bypass, rd_reg, PC_in_16, PC_out_4, PC_16_jmp, PC_4_jmp;
+    logic [31:0]    rd_bypass, rd_reg, PC_in_16, PC_out_4;
     logic [3:0]     reg_sel;
     logic           full, rst_wflush, zeros;
 
@@ -73,10 +73,10 @@ module IFQ (
 // Full and ifq_empty flags
     assign ifq_empty    = (write_p[4:0] == read_p[4:0]);
     assign full         = (write_p[3:2] == read_p[3:2]) && (write_p[4] != read_p[4]);
-    assign zeros        = ~(|I0_out_ | |I1_out_ | |I2_out_ | |I3_out_);
+    assign zeros        = ~(I0_out_ || I1_out_ || I2_out_ || I3_out_);
 
 // Instruction selection for first load
-    assign ifq_inst         = disp_rd_en_in ? ((ifq_empty || disp_jmp_b_va) ? rd_bypass : rd_reg) : 32'h0;
+    assign ifq_inst         = disp_rd_en_in ? ((ifq_empty || disp_jmp_b_va) ? rd_bypass : ((rd_reg == 32'b0) ? rd_bypass : rd_reg)) : 32'h0;
 
 // Mux for first load
     assign rd_bypass    =   (read_p[1:0] == 2'b00) ?    icache_rd[127:96]:

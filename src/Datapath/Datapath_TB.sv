@@ -7,6 +7,9 @@ module Datapath_TB();
     Datapath   UUT(.clk(clk), .rst(rst), .cdb_data(cdb_data), .cdb_va(cdb_va), .cdb_tag(cdb_tag));
 
     initial begin
+        cdb_tag = 0;
+        cdb_va = 0;
+        cdb_data = 0;
         clk = 1'b0;
         rst = 1'b0;
         #20 rst = 1'b1;
@@ -16,13 +19,23 @@ module Datapath_TB();
         #10 clk = ~clk; 
 
     always begin
-        #31 cdb_tag = 0;
+        #10;
+        cdb_tag = 0;
+        cdb_va = 0;
+        cdb_data = 0;
+        
+        #10 
+        cdb_tag = 1;
         cdb_va = 1;
         cdb_data = 234;
         
-        #20 cdb_tag = 1;
+        #20 
+        cdb_tag = 2;
         cdb_va = 1;
         cdb_data = -531;
+
+        #10;
+
     end
     
 endmodule

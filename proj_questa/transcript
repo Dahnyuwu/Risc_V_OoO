@@ -1,6 +1,6 @@
 vsim -voptargs=+acc work.Datapath_TB
 # vsim -voptargs="+acc" work.Datapath_TB 
-# Start time: 17:09:35 on Oct 23,2025
+# Start time: 18:00:10 on Oct 23,2025
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading sv_std.std
 # Loading work.Datapath_TB(fast)
@@ -83,44 +83,47 @@ vsim -voptargs=+acc work.Datapath_TB
 # Loading work.Register_DW(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv(20).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/IFQu/PC_in_u File: C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv Line: 33
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv(20).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/IFQu/PC_out_u File: C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv Line: 34
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 50
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 64
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/I_Cache/clk \
-sim:/Datapath_TB/UUT/I_Cache/ifq_PC_in \
-sim:/Datapath_TB/UUT/I_Cache/ifq_rd_en \
-sim:/Datapath_TB/UUT/I_Cache/icache_rd_va \
-sim:/Datapath_TB/UUT/I_Cache/icache_rd \
-sim:/Datapath_TB/UUT/I_Cache/inst_0 \
-sim:/Datapath_TB/UUT/I_Cache/inst_1 \
-sim:/Datapath_TB/UUT/I_Cache/inst_2 \
-sim:/Datapath_TB/UUT/I_Cache/inst_3 \
-sim:/Datapath_TB/UUT/I_Cache/inst_0_va \
-sim:/Datapath_TB/UUT/I_Cache/inst_1_va \
-sim:/Datapath_TB/UUT/I_Cache/inst_2_va \
-sim:/Datapath_TB/UUT/I_Cache/inst_3_va \
-sim:/Datapath_TB/UUT/I_Cache/rom
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+do wave.do	
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jdhuerta  Hostname: IDANNY-LAP  ProcessID: 14856
-#           Attempting to use alternate WLF file "./wlft8nwsk9".
+#           Attempting to use alternate WLF file "./wlftke8z9z".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8nwsk9
+#           Using alternate file: ./wlftke8z9z
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/PC_in'.
+# Executing ONERROR command at macro ./wave.do line 5
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/inst'.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/opcode'.
+# Executing ONERROR command at macro ./wave.do line 7
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rd_tag'.
+# Executing ONERROR command at macro ./wave.do line 8
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag_va'.
+# Executing ONERROR command at macro ./wave.do line 9
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag'.
+# Executing ONERROR command at macro ./wave.do line 10
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_data'.
+# Executing ONERROR command at macro ./wave.do line 11
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag_va'.
+# Executing ONERROR command at macro ./wave.do line 12
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag'.
+# Executing ONERROR command at macro ./wave.do line 13
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_data'.
+# Executing ONERROR command at macro ./wave.do line 14
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
 run
+# ** Note: $stop    : C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv(31)
+#    Time: 50 ns  Iteration: 0  Instance: /Datapath_TB
+# Break in Module Datapath_TB at C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv line 31
 run
 run
-run
-# Compile of IFQ.sv failed with 2 errors.
-# Compile of IFQ.sv was successful.
+# Compile of Datapath_TB.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -208,9 +211,9 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 50
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 64
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
@@ -219,35 +222,209 @@ run
 run
 run
 run
+# Compile of Datapath_TB.sv failed with 1 errors.
+# Compile of Datapath_TB.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
 run
 run
 run
 run
+# Compile of Datapath_TB.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
 run
 run
-do wave.do
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/PC_in'.
-# Executing ONERROR command at macro ./wave.do line 5
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/inst'.
-# Executing ONERROR command at macro ./wave.do line 6
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/opcode'.
-# Executing ONERROR command at macro ./wave.do line 7
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rd_tag'.
-# Executing ONERROR command at macro ./wave.do line 8
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag_va'.
-# Executing ONERROR command at macro ./wave.do line 9
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag'.
-# Executing ONERROR command at macro ./wave.do line 10
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_data'.
-# Executing ONERROR command at macro ./wave.do line 11
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag_va'.
-# Executing ONERROR command at macro ./wave.do line 12
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag'.
-# Executing ONERROR command at macro ./wave.do line 13
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_data'.
-# Executing ONERROR command at macro ./wave.do line 14
+run
+run
+# Causality operation skipped due to absence of debug database file
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/DU/RST_I/w_data1 \
+sim:/Datapath_TB/UUT/DU/RST_I/token
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
@@ -333,21 +510,1083 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 50
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 64
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
 run
+# Compile of Dispatch_Unit.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
-run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
 run
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IFQu/clk \
-sim:/Datapath_TB/UUT/IFQu/rst \
+sim:/Datapath_TB/UUT/DU/TF/tag_out
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/DU/TF/rd_va
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/DU/TF/tag_table
+restart
+# Compile of Datapath_TB.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+run
+add wave -position insertpoint  \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[4]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[3]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[2]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[1]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[0]}
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/DU/TF/rd
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+# Compile of TAG_FIFO.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/IFQu/disp_jmp_b_va
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/IFQu/ifq_empty
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/IFQu/ifq_inst
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+clear
+# invalid command name "clear"
+cls
+# 
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/I_Cache/ifq_PC_in
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/I_Cache/icache_rd
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/I_Cache/ifq_PC_in \
+sim:/Datapath_TB/UUT/I_Cache/ifq_rd_en \
+sim:/Datapath_TB/UUT/I_Cache/icache_rd_va \
+sim:/Datapath_TB/UUT/I_Cache/icache_rd \
+sim:/Datapath_TB/UUT/I_Cache/inst_0 \
+sim:/Datapath_TB/UUT/I_Cache/inst_1 \
+sim:/Datapath_TB/UUT/I_Cache/inst_2 \
+sim:/Datapath_TB/UUT/I_Cache/inst_3 \
+sim:/Datapath_TB/UUT/I_Cache/inst_0_va \
+sim:/Datapath_TB/UUT/I_Cache/inst_1_va \
+sim:/Datapath_TB/UUT/I_Cache/inst_2_va \
+sim:/Datapath_TB/UUT/I_Cache/inst_3_va \
+sim:/Datapath_TB/UUT/I_Cache/rom
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+add wave -position insertpoint  \
 sim:/Datapath_TB/UUT/IFQu/icache_rd \
 sim:/Datapath_TB/UUT/IFQu/icache_rd_va \
 sim:/Datapath_TB/UUT/IFQu/disp_jmp_b_addr \
@@ -460,20 +1699,18 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 50
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 64
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
-run
-run
-run
-run
-run
-run
-# Compile of Dispatch_Unit.sv was successful.
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of IFQ.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -563,237 +1800,15 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/PC_16_jmp'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/PC_4_jmp'. 
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/clk \
-sim:/Datapath_TB/UUT/DU/rst \
-sim:/Datapath_TB/UUT/DU/ifq_pc4 \
-sim:/Datapath_TB/UUT/DU/ifq_inst \
-sim:/Datapath_TB/UUT/DU/ifq_empty \
-sim:/Datapath_TB/UUT/DU/disp_jmp_b_addr \
-sim:/Datapath_TB/UUT/DU/disp_jmp_b_va \
-sim:/Datapath_TB/UUT/DU/disp_rd_en \
-sim:/Datapath_TB/UUT/DU/cdb_data \
-sim:/Datapath_TB/UUT/DU/cdb_tag \
-sim:/Datapath_TB/UUT/DU/cdb_b \
-sim:/Datapath_TB/UUT/DU/cdb_b_taken \
-sim:/Datapath_TB/UUT/DU/cdb_va \
-sim:/Datapath_TB/UUT/DU/disp_rs1_data \
-sim:/Datapath_TB/UUT/DU/disp_rs2_data \
-sim:/Datapath_TB/UUT/DU/disp_rd_tag \
-sim:/Datapath_TB/UUT/DU/disp_rs1_tag \
-sim:/Datapath_TB/UUT/DU/disp_rs2_tag \
-sim:/Datapath_TB/UUT/DU/disp_opcode \
-sim:/Datapath_TB/UUT/DU/disp_rs1_tag_va \
-sim:/Datapath_TB/UUT/DU/disp_rs2_tag_va \
-sim:/Datapath_TB/UUT/DU/rs1_data_ \
-sim:/Datapath_TB/UUT/DU/rs2_data_ \
-sim:/Datapath_TB/UUT/DU/se_ \
-sim:/Datapath_TB/UUT/DU/WEROut_ \
-sim:/Datapath_TB/UUT/DU/tag_out_ \
-sim:/Datapath_TB/UUT/DU/rs1_tag_ \
-sim:/Datapath_TB/UUT/DU/rs2_tag_ \
-sim:/Datapath_TB/UUT/DU/rd_tag_ \
-sim:/Datapath_TB/UUT/DU/rd_add_ \
-sim:/Datapath_TB/UUT/DU/rd_add__ \
-sim:/Datapath_TB/UUT/DU/rs1_add_ \
-sim:/Datapath_TB/UUT/DU/rs2_add_ \
-sim:/Datapath_TB/UUT/DU/rd_va_ \
-sim:/Datapath_TB/UUT/DU/rs1_tag_va_ \
-sim:/Datapath_TB/UUT/DU/rs2_tag_va_ \
-sim:/Datapath_TB/UUT/DU/rw_rf_ \
-sim:/Datapath_TB/UUT/DU/imm_f_ \
-sim:/Datapath_TB/UUT/DU/r_ena_
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Compile of Dispatch_Unit.sv was successful.
+# Compile of IFQ.sv failed with 1 errors.
+# Compile of IFQ.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -883,56 +1898,16 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag_'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag_'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rd_tag_'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rw_rf_'. 
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
 run
-do wave.do
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/PC_in'.
-# Executing ONERROR command at macro ./wave.do line 5
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/inst'.
-# Executing ONERROR command at macro ./wave.do line 6
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/opcode'.
-# Executing ONERROR command at macro ./wave.do line 7
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rd_tag'.
-# Executing ONERROR command at macro ./wave.do line 8
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag_va'.
-# Executing ONERROR command at macro ./wave.do line 9
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag'.
-# Executing ONERROR command at macro ./wave.do line 10
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_data'.
-# Executing ONERROR command at macro ./wave.do line 11
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag_va'.
-# Executing ONERROR command at macro ./wave.do line 12
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag'.
-# Executing ONERROR command at macro ./wave.do line 13
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_data'.
-# Executing ONERROR command at macro ./wave.do line 14
-run
 run
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/clk \
-sim:/Datapath_TB/UUT/DU/RST_I/rst \
-sim:/Datapath_TB/UUT/DU/RST_I/w_data1 \
-sim:/Datapath_TB/UUT/DU/RST_I/cdb_token \
-sim:/Datapath_TB/UUT/DU/RST_I/rs1_add \
-sim:/Datapath_TB/UUT/DU/RST_I/rs2_add \
-sim:/Datapath_TB/UUT/DU/RST_I/rd_add_in \
-sim:/Datapath_TB/UUT/DU/RST_I/w_data_ena1 \
-sim:/Datapath_TB/UUT/DU/RST_I/w_ena_2 \
-sim:/Datapath_TB/UUT/DU/RST_I/rs1_tag \
-sim:/Datapath_TB/UUT/DU/RST_I/rs2_tag \
-sim:/Datapath_TB/UUT/DU/RST_I/rd_add_out \
-sim:/Datapath_TB/UUT/DU/RST_I/rs1_tag_va \
-sim:/Datapath_TB/UUT/DU/RST_I/rs2_tag_va \
-sim:/Datapath_TB/UUT/DU/RST_I/token \
-sim:/Datapath_TB/UUT/DU/RST_I/w_ena_1
+sim:/Datapath_TB/UUT/DU/TF/write_p \
+sim:/Datapath_TB/UUT/DU/TF/read_p
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
@@ -1020,368 +1995,11 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 run
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/clk \
-sim:/Datapath_TB/UUT/DU/rst \
-sim:/Datapath_TB/UUT/DU/ifq_pc4 \
-sim:/Datapath_TB/UUT/DU/ifq_inst \
-sim:/Datapath_TB/UUT/DU/ifq_empty \
-sim:/Datapath_TB/UUT/DU/disp_jmp_b_addr \
-sim:/Datapath_TB/UUT/DU/disp_jmp_b_va \
-sim:/Datapath_TB/UUT/DU/disp_rd_en \
-sim:/Datapath_TB/UUT/DU/cdb_data \
-sim:/Datapath_TB/UUT/DU/cdb_tag \
-sim:/Datapath_TB/UUT/DU/cdb_b \
-sim:/Datapath_TB/UUT/DU/cdb_b_taken \
-sim:/Datapath_TB/UUT/DU/cdb_va \
-sim:/Datapath_TB/UUT/DU/disp_rs1_data \
-sim:/Datapath_TB/UUT/DU/disp_rs2_data \
-sim:/Datapath_TB/UUT/DU/disp_rd_tag \
-sim:/Datapath_TB/UUT/DU/disp_rs1_tag \
-sim:/Datapath_TB/UUT/DU/disp_rs2_tag \
-sim:/Datapath_TB/UUT/DU/disp_opcode \
-sim:/Datapath_TB/UUT/DU/disp_rs1_tag_va \
-sim:/Datapath_TB/UUT/DU/disp_rs2_tag_va \
-sim:/Datapath_TB/UUT/DU/rs1_data_ \
-sim:/Datapath_TB/UUT/DU/rs2_data_ \
-sim:/Datapath_TB/UUT/DU/se_ \
-sim:/Datapath_TB/UUT/DU/WEROut_ \
-sim:/Datapath_TB/UUT/DU/tag_out_ \
-sim:/Datapath_TB/UUT/DU/rd_add_ \
-sim:/Datapath_TB/UUT/DU/rd_add__ \
-sim:/Datapath_TB/UUT/DU/rs1_add_ \
-sim:/Datapath_TB/UUT/DU/rs2_add_ \
-sim:/Datapath_TB/UUT/DU/rd_va_ \
-sim:/Datapath_TB/UUT/DU/rs1_tag_va_ \
-sim:/Datapath_TB/UUT/DU/rs2_tag_va_ \
-sim:/Datapath_TB/UUT/DU/imm_f_ \
-sim:/Datapath_TB/UUT/DU/r_ena_
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-do wave.do
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/PC_in'.
-# Executing ONERROR command at macro ./wave.do line 5
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/IFQu/inst'.
-# Executing ONERROR command at macro ./wave.do line 6
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/opcode'.
-# Executing ONERROR command at macro ./wave.do line 7
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rd_tag'.
-# Executing ONERROR command at macro ./wave.do line 8
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag_va'.
-# Executing ONERROR command at macro ./wave.do line 9
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_tag'.
-# Executing ONERROR command at macro ./wave.do line 10
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs1_data'.
-# Executing ONERROR command at macro ./wave.do line 11
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag_va'.
-# Executing ONERROR command at macro ./wave.do line 12
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_tag'.
-# Executing ONERROR command at macro ./wave.do line 13
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/rs2_data'.
-# Executing ONERROR command at macro ./wave.do line 14
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/token
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/w_ena_1
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/w_ena_2
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/w_data_ena1
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/rd_add_in
 add wave -position insertpoint  \
 sim:/Datapath_TB/UUT/DU/TF/rd_va
 restart
@@ -1471,14 +2089,16 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
 run
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/TF/rd
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[3]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[2]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[1]} \
+{sim:/Datapath_TB/UUT/DU/TF/tag_table[0]}
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
@@ -1566,209 +2186,8 @@ restart
 # ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/DJB/rd_add
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 65
-run
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-# Compile of Dispatch_Unit.sv was successful.
-# Compile of Dispatch_Unit.sv was successful.
+#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
+# Compile of Datapath_TB.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -1859,196 +2278,8 @@ restart
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
 # ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
-# ** Error (suppressible): (vsim-3839) Variable '/Datapath_TB/UUT/DU/rd_add_', driven via a port connection, is multiply driven. See C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv(51).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
-# Compile of Dispatch_Unit.sv was successful.
-vsim -voptargs=+acc work.Datapath_TB
-# vsim -voptargs="+acc" work.Datapath_TB 
-# Start time: 17:09:35 on Oct 23,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=5.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jdhuerta  Hostname: IDANNY-LAP  ProcessID: 14856
-#           Attempting to use alternate WLF file "./wlftmik5j9".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmik5j9
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'ifq_PC_in'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(17).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache File: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv Line: 16
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (3) for port 'opcode'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/DJB File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 51
-# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'rd_add_out'. The port definition is at: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/DU/RST_I File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv Line: 67
 run
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "xd.txt". (Current address [33], address range [0:32])    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
 run
 run

@@ -66,7 +66,7 @@ module Dispatch_Unit(
 
     RST             RST_I(
     // Inputs
-        .clk(clk), .rst(rst), .w_data1({rd_va_, disp_rd_tag}), .cdb_token({cdb_va, cdb_tag}), .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add_in(rd_add_), .w_data_ena1(rd_va_), 
+        .clk(clk), .rst(rst), .w_data1({rd_va_, tag_out_}), .cdb_token({cdb_va, cdb_tag}), .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add_in(rd_add_), .w_data_ena1(rd_va_), 
     // Outputs
         .w_ena_2(WEROut_),   .rs1_tag(disp_rs1_tag), .rs2_tag(disp_rs2_tag), .rd_add_out(rd_add__), .rs1_tag_va(rs1_tag_va_), .rs2_tag_va(rs2_tag_va_)
     );
