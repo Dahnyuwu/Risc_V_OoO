@@ -7,7 +7,8 @@ module RST(
     
 // Output
     output  logic   [31:0]  w_ena_2,
-    output  logic   [5:0]   rs1_tag, rs2_tag, rd_add_out,
+    output  logic   [5:0]   rs1_tag, rs2_tag,
+    output  logic   [4:0]   rd_add_out,
     output  logic           rs1_tag_va, rs2_tag_va
 
 );

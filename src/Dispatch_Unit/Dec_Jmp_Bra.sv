@@ -3,14 +3,20 @@ module Dec_Jmp_Bra(
     input   logic   [31:0]  inst,
 
 // Outputs    
+    output  logic   [31:0]  se,
+    output  logic   [9:0]  opcode_out,
+    output  logic   [6:0]   funct7,
     output  logic   [4:0]   rs1_add, rs2_add, rd_add,
     output  logic   [2:0]   funct3,
-    output  logic   [6:0]   funct7, opcode,
-    output  logic   [31:0]  se,
     output  logic           r_ena, imm_f
+
 );
 
 // Decoder
+
+    logic [6:0]  opcode;
+    logic [16:0] op_functs;
+
     logic [2:0] i_type; // Instruction type assignation
 
     localparam [2:0] R = 3'b000;    // Instruction type constant
@@ -47,5 +53,37 @@ module Dec_Jmp_Bra(
                         (i_type == I)                               ? {{11{inst[31]}}, inst[31], inst[19:12], inst[20], inst[30:21], 1'b0} :   // J-type: Jump format with LSB set to 0
                                                                       32'b0;                                                                        // Default: Return 0 for invalid opcodes
 
+    assign  op_functs =  {opcode, funct3, funct7};
+
+    // opcode_out assignation --> {Jump[1], Branch[2], Sign(SLTI, SLT...)[1], Issue select[2], Operation[3]}
+    assign opcode_out      =    // R - Type
+                                ((op_functs & 17'h1FFFF) == 17'b0110011_000_0000000) ? 10'b00_00_0_00_000 :      // ADD +
+                                ((op_functs & 17'h1FFFF) == 17'b0110011_000_0100000) ? 10'b00_00_0_00_001 :      // SUB -
+                                ((op_functs & 17'h1FFFF) == 17'b0110011_111_0000000) ? 10'b00_00_0_00_010 :      // AND &
+                                ((op_functs & 17'h1FF80) == 17'b0010011_110_0000000) ? 10'b00_00_0_00_011 :      // OR  |
+                                ((op_functs & 17'h1FF80) == 17'b0110011_010_0000000) ? 10'b00_00_1_00_001 :      // SLT <
+                                    // MUL/DIV - Extension0
+                                    ((op_functs & 17'h1FFFF) == 17'b0110011_000_0000001) ? 10'b00_00_0_01_000 :  // MUL *
+                                    ((op_functs & 17'h1FFFF) == 17'b0110011_100_0000001) ? 10'b00_00_0_10_000 :  // DIV /
+
+                                // I - Type         
+                                ((op_functs & 17'h1FF80) == 17'b0010011_000_0000000) ? 10'b00_00_0_00_000 :      // ADDI +
+                                ((op_functs & 17'h1FF80) == 17'b0010011_111_0000000) ? 10'b00_00_0_00_010 :      // ANDI &
+                                ((op_functs & 17'h1FFFF) == 17'b0110011_110_0000000) ? 10'b00_00_0_00_011 :      // ORI  |
+                                ((op_functs & 17'h1FF80) == 17'b0010011_010_0000000) ? 10'b00_00_1_00_001 :      // SLTI <
+                                ((op_functs & 17'h1FFFF) == 17'b0010011_001_0000000) ? 10'b00_00_0_00_100 :      // SLLI <<
+
+                                // Store/Load - Type
+                                ((op_functs & 17'h1FF80) == 17'b0000011_010_0000000) ? 10'b00_00_0_11_000 :      // LW
+                                ((op_functs & 17'h1FF80) == 17'b0100011_010_0000000) ? 10'b00_00_0_11_001 :      // SW
+
+                                // Branch - Type
+                                ((op_functs & 17'h1FF80) == 17'b1100011_000_0000000) ? 10'b00_01_1_00_001 :      // BEQ
+                                ((op_functs & 17'h1FF80) == 17'b1100011_001_0000000) ? 10'b00_10_1_00_001 :      // BNE
+
+                                // Jump - Type     
+                                ((op_functs & 17'h1FF80) == 17'b1100111_000_0000000) ? 10'b01_00_0_00_000 :      // JALR
+                                ((op_functs & 17'h1FC00) == 17'b1101111_000_0000000) ? 10'b10_00_0_00_000 :      // JAL
+                                                                                       10'h0 ;                   // Default case: all signals inactive
 
 endmodule

@@ -15,14 +15,14 @@ module Dispatch_Unit(
     input   logic           cdb_b, cdb_b_taken, cdb_va,
 
 // Output to Issue Queue
-    output  logic   [31:0]  disp_rs1_data, disp_rs2_data,
+    output  logic   [31:0]  disp_rs1_data, disp_rs2_data, disp_imm,
     output  logic   [5:0]   disp_rd_tag, disp_rs1_tag, disp_rs2_tag, 
-    output  logic   [2:0]   disp_opcode,
+    output  logic   [9:0]   disp_opcode,
     output  logic           disp_rs1_tag_va, disp_rs2_tag_va
 );
 
 // Internal variables
-    logic   [31:0]  rs1_data_, rs2_data_, se_, WEROut_;
+    logic   [31:0]  rs1_data_, rs2_data_, WEROut_;
     logic   [5:0]   tag_out_;
     logic   [4:0]   rd_add_, rd_add__, rs1_add_, rs2_add_;
     logic           rd_va_, rs1_tag_va_, rs2_tag_va_, imm_f_;
@@ -52,7 +52,7 @@ module Dispatch_Unit(
     // Inputs
         .inst(ifq_inst), 
     // Outputs
-        .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add(rd_add_), .funct3(), .funct7(), .opcode(disp_opcode), .r_ena(r_ena_), .imm_f(imm_f_), .se(se_)
+        .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add(rd_add_), .funct3(), .funct7(), .opcode_out(disp_opcode), .r_ena(r_ena_), .imm_f(imm_f_), .se(disp_imm)
     );
 
     TAG_FIFO        TF(

@@ -17,7 +17,7 @@ module Datapath(
         // Inputs
             .clk(clk),
         // Inputs I-cache 
-            .ifq_rd_en(rd_en_out_), .ifq_PC_in(PC_in_>>4),
+            .ifq_rd_en(rd_en_out_), .ifq_PC_in(PC_in_[11:4]),
         // Outputs
             .icache_rd_va(rd_va_), .icache_rd(rd_)
     );
