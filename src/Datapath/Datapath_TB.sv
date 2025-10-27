@@ -1,15 +1,18 @@
 module Datapath_TB();
 
-    logic   clk, rst, cdb_va;
+    logic   clk, rst, cdb_va, cdb_b_taken, cdb_b;
     logic   [5:0] cdb_tag;
     logic   [31:0] cdb_data;
+    integer i;
 
-    Datapath   UUT(.clk(clk), .rst(rst), .cdb_data(cdb_data), .cdb_va(cdb_va), .cdb_tag(cdb_tag));
+    Datapath   UUT(.clk(clk), .rst(rst), .cdb_data(cdb_data), .cdb_va(cdb_va), .cdb_tag(cdb_tag), .cdb_b_taken(cdb_b_taken), .cdb_b(cdb_b));
 
     initial begin
         cdb_tag = 0;
         cdb_va = 0;
         cdb_data = 0;
+        cdb_b = 0;
+        cdb_b_taken = 1'b0;
         clk = 1'b0;
         rst = 1'b0;
         #20 rst = 1'b1;
@@ -24,17 +27,13 @@ module Datapath_TB();
         cdb_va = 1;
         cdb_data = 123;
         
-        #20 
-        cdb_tag = 1;
-        cdb_va = 1;
-        cdb_data = 234;
-        
-        #20 
-        cdb_tag = 2;
-        cdb_va = 1;
-        cdb_data = -531;
-
-        #10;
+        for (i=1; i<20; i++) begin
+            #20 
+            cdb_tag = i;
+            cdb_va = 1;
+            cdb_data = i*$random;
+        end
+        $stop;
 
     end
     

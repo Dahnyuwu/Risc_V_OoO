@@ -22,23 +22,20 @@ module Dispatch_Unit(
 );
 
 // Internal variables
-    logic   [31:0]  rs1_data_, rs2_data_, WEROut_;
+    logic   [31:0]  rs1_data_, rs2_data_, WEROut_, jmp_add_;
     logic   [5:0]   tag_out_;
     logic   [4:0]   rd_add_, rd_add__, rs1_add_, rs2_add_;
     logic           rd_va_, rs1_tag_va_, rs2_tag_va_, imm_f_;
 
 // Assigns
-    assign  disp_rd_en= 1'b1;
-    assign  disp_jmp_b_va = 1'b0;
-    assign  disp_jmp_b_addr = 32'b0;
-
-    assign  disp_rd_tag  = tag_out_;
-    
-    assign  disp_rs1_tag_va = ~rs1_tag_va_;
+    assign  disp_jmp_b_va   = (disp_opcode[9] | cdb_b_taken);
+    assign  disp_jmp_b_addr = cdb_b ? jmp_add_ : cdb_data;
+    assign  disp_rd_tag     = tag_out_;
+    assign  disp_rs1_tag_va = (~rs1_tag_va_);
     assign  disp_rs1_data   = (~rs1_tag_va_) ? rs1_data_ : cdb_data;
-
-    assign  disp_rs2_tag_va = ~rs2_tag_va_;
+    assign  disp_rs2_tag_va = (~rs2_tag_va_);
     assign  disp_rs2_data   = (~rs2_tag_va_) ? rs2_data_ : cdb_data; 
+    assign  disp_rd_en      = (~(|disp_opcode[7:6]));
 
 // Instancias
     Register_File   RF(
@@ -50,9 +47,9 @@ module Dispatch_Unit(
 
     Dec_Jmp_Bra     DJB(
     // Inputs
-        .inst(ifq_inst), 
+        .inst(ifq_inst), .pc(ifq_pc4),
     // Outputs
-        .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add(rd_add_), .funct3(), .funct7(), .opcode_out(disp_opcode), .r_ena(r_ena_), .imm_f(imm_f_), .se(disp_imm)
+        .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add(rd_add_), .opcode_out(disp_opcode), .r_ena(r_ena_), .imm_f(imm_f_), .se(disp_imm), .jmp_add(jmp_add_)
     );
 
     TAG_FIFO        TF(

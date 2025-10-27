@@ -1,6 +1,6 @@
 module Datapath(
 // Inputs
-    input   logic   clk, rst, cdb_va,
+    input   logic   clk, rst, cdb_va, cdb_b_taken, cdb_b,
 
     input   logic   [5:0] cdb_tag,
     input   logic   [31:0] cdb_data
@@ -41,7 +41,7 @@ module Datapath(
         // Inputs IFQ
             .ifq_pc4(PC_out_), .ifq_inst(inst_), .ifq_empty(empty_),
         // Input CDB
-            .cdb_b(), .cdb_b_taken(), .cdb_va(cdb_va), .cdb_data(cdb_data), .cdb_tag(cdb_tag),
+            .cdb_b(cdb_b), .cdb_b_taken(cdb_b_taken), .cdb_va(cdb_va), .cdb_data(cdb_data), .cdb_tag(cdb_tag),
         // Outputs to IFQ
             .disp_jmp_b_addr(jmp_b_addr_), .disp_jmp_b_va(jmp_b_va_), .disp_rd_en(rd_en_),
         // Output to issue queue

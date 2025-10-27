@@ -60,6 +60,13 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
@@ -82,10 +89,10 @@ n@_opt
 Z7 OL;O;2022.4;75
 R1
 T_opt1
-!s110 1761448363
-VBHaKXm6GhL3b<7<S[2ES]2
+!s110 1761605474
+VTCLI2I0C?Z@<?zM97Wc:l3
 R2
-=31-c85acf71c477-68fd91a9-316-5d84
+=30-c85acf71c477-68fff760-154-301c
 R0
 R3
 R4
@@ -120,23 +127,23 @@ R6
 n@c@d@b
 vDatapath
 R8
-Z13 !s110 1761447314
+!s110 1761599429
 !i10b 1
-!s100 bf]aN>@X8K2f;kJSEfmKZ0
-IH^HoeeKQ6n_1lfKa[Czd83
+!s100 ABJ13j@g@;nLaTD3ULkIR0
+IFi4Xhm71PegO_ZG<5L2A92
 S1
 R9
-w1761443505
+w1761599402
 8C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv
 FC:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv
-!i122 102
+!i122 117
 L0 1 52
 R10
 R11
 r1
 !s85 0
 31
-Z14 !s108 1761447314.000000
+!s108 1761599429.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv|
 !i113 0
@@ -145,23 +152,23 @@ R6
 n@datapath
 vDatapath_TB
 R8
-!s110 1761448295
+!s110 1761605452
 !i10b 1
-!s100 kZhj^egF^0LG3Ld?5zD`E0
-IeGeAVQ@W=A1SiPdUD2JEL1
+!s100 M9IR^1=N=1h;mHlPPnlJj3
+I5Xm5L2E13<9S4P96N6H3J0
 S1
 R9
-w1761448293
+w1761605448
 8C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv
 FC:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv
-!i122 110
-L0 1 41
+!i122 124
+L0 1 40
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761448295.000000
+!s108 1761605452.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv|
 !i113 0
@@ -170,23 +177,23 @@ R6
 n@datapath_@t@b
 vDec_Jmp_Bra
 R8
-!s110 1761447584
+!s110 1761602419
 !i10b 1
-!s100 5>baz:oTS_g96RgY[9RD92
-ITK:_S^U7U0P;MMbJSj3i:0
+!s100 :nN0?YBTQKWXQiUhHbFe33
+Ii9bjIM[JIWR>BzTdi@gB]3
 S1
 R9
-w1761447573
+w1761601432
 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv
 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv
-!i122 106
-L0 1 89
+!i122 119
+L0 1 91
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761447584.000000
+!s108 1761602419.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv|
 !i113 0
@@ -195,23 +202,23 @@ R6
 n@dec_@jmp_@bra
 vDispatch_Unit
 R8
-!s110 1761447393
+!s110 1761602497
 !i10b 1
-!s100 CfSndC3iiN[LKzI51ICff3
-Iezl`=RX?Ja^gd]62LML9P1
+!s100 6DG1eS0jClB=ZDk]cm[bi1
+Id_@ETKPOMlREIMC9elMIX1
 S1
 R9
-w1761447386
+w1761602496
 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
-!i122 103
-L0 1 76
+!i122 122
+L0 1 73
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761447393.000000
+!s108 1761602497.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv|
 !i113 0
@@ -320,15 +327,15 @@ R6
 n@i@f@q
 vRegister
 R8
-Z15 !s110 1761108216
+Z13 !s110 1761108216
 !i10b 1
 !s100 QPC]]XDhI1f<ghkIL701Y3
 IzW8fo[h30Kz^be7R4^g8[0
 S1
 R9
-Z16 w1760394859
-Z17 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
-Z18 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
+Z14 w1760394859
+Z15 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
+Z16 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
 !i122 29
 L0 14 23
 R10
@@ -336,24 +343,24 @@ R11
 r1
 !s85 0
 31
-Z19 !s108 1761108216.000000
-Z20 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
-Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
+Z17 !s108 1761108216.000000
+Z18 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
+Z19 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
 !i113 0
 R12
 R6
 n@register
 vRegister_DW
 R8
-R15
+R13
 !i10b 1
 !s100 W2;9F[=XzGN[X>d38XeW@3
 I?Qo>KGMnMA_QVWAiEScCQ1
 S1
 R9
+R14
+R15
 R16
-R17
-R18
 !i122 29
 L0 39 27
 R10
@@ -361,9 +368,9 @@ R11
 r1
 !s85 0
 31
+R17
+R18
 R19
-R20
-R21
 !i113 0
 R12
 R6
@@ -393,7 +400,7 @@ R6
 n@register_@file
 vRST
 R8
-R13
+!s110 1761447314
 !i10b 1
 !s100 OG8LYi2U;gEf6b?iLVB_d1
 II4oMb<`zIJj0YQHz4LRRY3
@@ -409,7 +416,7 @@ R11
 r1
 !s85 0
 31
-R14
+!s108 1761447314.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv|
 !i113 0
