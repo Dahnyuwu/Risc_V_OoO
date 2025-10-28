@@ -24,10 +24,10 @@ module Datapath_TB();
     always begin
         #10;
         cdb_tag = 0;
-        cdb_va = 1;
+        cdb_va = 0;
         cdb_data = 123;
         
-        for (i=1; i<20; i++) begin
+        for (i=0; i<20; i++) begin
             #20 
             cdb_tag = i;
             cdb_va = 1;

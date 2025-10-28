@@ -19,7 +19,7 @@ module Datapath(
         // Inputs I-cache 
             .ifq_rd_en(rd_en_out_), .ifq_PC_in(PC_in_[11:4]),
         // Outputs
-            .icache_rd_va(rd_va_), .icache_rd(rd_)
+            .icache_rd(rd_)
     );
 
 
@@ -27,7 +27,7 @@ module Datapath(
         // Inputs
             .clk(clk), .rst(rst), 
         // Inputs I-cache
-            .icache_rd_va(rd_va_), .icache_rd(rd_),
+            .icache_rd(rd_),
         // Inputs Dispatcher 
             .disp_rd_en_in(rd_en_), .disp_jmp_b_va(jmp_b_va_), .disp_jmp_b_addr(jmp_b_addr_), 
         // Outputs to Dispatcher

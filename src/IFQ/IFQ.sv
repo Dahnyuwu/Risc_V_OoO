@@ -3,7 +3,6 @@ module IFQ (
      
 // Input I-cache
     input   logic   [127:0] icache_rd,
-    input   logic           icache_rd_va,
 
 // Input Dispatcher 
     input   logic   [31:0]  disp_jmp_b_addr,
@@ -54,7 +53,7 @@ module IFQ (
                 write_p <= 5'b0;
 
             else
-                if (!full && icache_rd_va &&  disp_rd_en_in)
+                if (!full &&  disp_rd_en_in)
                     write_p <= write_p + 3'b100;
 
 // Read pointer

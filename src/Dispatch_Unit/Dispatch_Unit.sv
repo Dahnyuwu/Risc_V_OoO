@@ -29,13 +29,15 @@ module Dispatch_Unit(
 
 // Assigns
     assign  disp_jmp_b_va   = (disp_opcode[9] | cdb_b_taken);
+    // assign  disp_jmp_b_va   = 1'b0;
     assign  disp_jmp_b_addr = cdb_b ? jmp_add_ : cdb_data;
     assign  disp_rd_tag     = tag_out_;
     assign  disp_rs1_tag_va = (~rs1_tag_va_);
     assign  disp_rs1_data   = (~rs1_tag_va_) ? rs1_data_ : cdb_data;
     assign  disp_rs2_tag_va = (~rs2_tag_va_);
     assign  disp_rs2_data   = (~rs2_tag_va_) ? rs2_data_ : cdb_data; 
-    assign  disp_rd_en      = (~(|disp_opcode[7:6]));
+    // assign  disp_rd_en      = (~(|disp_opcode[7:6]));
+    assign  disp_rd_en      = 1'b1;
 
 // Instancias
     Register_File   RF(
