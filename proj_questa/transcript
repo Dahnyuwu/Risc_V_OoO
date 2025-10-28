@@ -1,7 +1,14 @@
+# Compile of Dispatch_Control.sv was successful.
+# Compile of Dispatch_Unit.sv was successful.
 vsim -voptargs=+acc work.Datapath_TB
 # vsim -voptargs="+acc" work.Datapath_TB 
-# Start time: 19:02:57 on Oct 27,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Start time: 11:54:34 on Oct 28,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2685) [TFMPC] - Too few port connections for 'DU'.  Expected 23, found 21.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'disp_imm'.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'issue_full'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # Loading sv_std.std
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
@@ -14,6 +21,7 @@ vsim -voptargs=+acc work.Datapath_TB
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -84,25 +92,13 @@ vsim -voptargs=+acc work.Datapath_TB
 do wave.do
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jdhuerta  Hostname: IDANNY-LAP  ProcessID: 14856
-#           Attempting to use alternate WLF file "./wlftfsrgcd".
+#           Attempting to use alternate WLF file "./wlfttnar49".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfsrgcd
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+#           Using alternate file: ./wlfttnar49
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -114,6 +110,7 @@ restart
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -181,111 +178,9 @@ restart
 # Loading work.Register(fast__67)
 # Loading work.RST(fast)
 # Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/disp_opcode
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h1FF 0
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IFQu/ifq_inst \
-sim:/Datapath_TB/UUT/IFQu/ifq_PC_in
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h1FF 0
-run
-run
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h3ff 0
-run
-run
-run
+sim:/Datapath_TB/UUT/DU/ifq_pc4 \
+sim:/Datapath_TB/UUT/DU/ifq_inst
 run
 run
 run
@@ -299,9 +194,6 @@ run
 run
 run
 run
-# ** Note: $stop    : C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv(36)
-#    Time: 390 ns  Iteration: 0  Instance: /Datapath_TB
-# Break in Module Datapath_TB at C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv line 36
 run
 run
 run
@@ -311,91 +203,7 @@ run
 run
 run
 run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
 run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h000 0
 run
 run
 run
@@ -415,9 +223,6 @@ run
 run
 run
 run
-# ** Note: $stop    : C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv(36)
-#    Time: 390 ns  Iteration: 0  Instance: /Datapath_TB
-# Break in Module Datapath_TB at C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv line 36
 run
 run
 run
@@ -432,25 +237,13 @@ run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-# ** Note: $stop    : C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv(36)
-#    Time: 780 ns  Iteration: 0  Instance: /Datapath_TB
-# Break in Module Datapath_TB at C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath_TB.sv line 36
 run
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/cdb_data \
-sim:/Datapath_TB/UUT/DU/cdb_tag \
-sim:/Datapath_TB/UUT/DU/cdb_b \
-sim:/Datapath_TB/UUT/DU/cdb_b_taken \
-sim:/Datapath_TB/UUT/DU/cdb_va
+sim:/Datapath_TB/UUT/DU/DC/state
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -462,6 +255,7 @@ restart
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -530,33 +324,17 @@ restart
 # Loading work.RST(fast)
 # Loading work.Register_DW(fast)
 run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# Break key hit
-# Simulation stop requested.
 run
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IFQu/ifq_PC_out
-# Break key hit
-# Simulation stop requested.
+sim:/Datapath_TB/cdb_va \
+sim:/Datapath_TB/cdb_b_taken \
+sim:/Datapath_TB/cdb_b \
+sim:/Datapath_TB/cdb_tag \
+sim:/Datapath_TB/cdb_data
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -568,6 +346,7 @@ restart
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -636,8 +415,294 @@ restart
 # Loading work.RST(fast)
 # Loading work.Register_DW(fast)
 run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
+run
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/DU/DC/branch_ena \
+sim:/Datapath_TB/UUT/DU/DC/issue_full \
+sim:/Datapath_TB/UUT/DU/DC/cdb_b \
+sim:/Datapath_TB/UUT/DU/DC/rd_en \
+sim:/Datapath_TB/UUT/DU/DC/state
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+run
+# Compile of Dispatch_Unit.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+run
+run
+run
+restart
+# Compile of Dispatch_Unit.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run
 run
@@ -655,2657 +720,26 @@ run
 add wave -position insertpoint  \
 sim:/Datapath_TB/UUT/DU/RST_I/token
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/TF/tag_out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/TF/tag_table
-# Compile of TAG_FIFO.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# Break key hit
-# Simulation stop requested.
-run
-# Compile of Datapath_TB.sv was successful.
-# Break key hit
-# Simulation stop requested.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/w_data_ena1
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/rd_add_in
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/rd_add_in
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/cdb_token
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/RST_I/w_ena_2
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/TF/write_p \
-sim:/Datapath_TB/UUT/DU/TF/read_p
-# Compile of Datapath_TB.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-force -freeze sim:/Datapath_TB/UUT/DU/cdb_va 1'h0 0
-run
-run
-restart
-# Compile of TAG_FIFO.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-force -freeze sim:/Datapath_TB/UUT/DU/RST_I/cdb_token 7'h44 0
-run
-run
-run
-run
-restart
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# Break key hit
-# Break at C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/TAG_FIFO.sv line 20
-run
-# Simulation stop requested.
-run
-# Break key hit
-# Simulation stop requested.
-run
-# Break key hit
-# Simulation stop requested.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Break key hit
-# Simulation stop requested.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-force -freeze sim:/Datapath_TB/UUT/DU/cdb_b_taken 1'h1 0
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'b1000000000 0
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h200 0
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Break key hit
-# Simulation stop requested.
-# Compile of Dec_Jmp_Bra.sv was successful.
-# Compile of Dispatch_Unit.sv was successful.
-# Compile of Datapath_TB.sv was successful.
-# 3 compiles, 0 failed with no errors.
-# Compile of Datapath_TB.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Break key hit
-# Simulation stop requested.
-# Compile of Datapath_TB.sv was successful.
-run
-# Break key hit
-# Simulation stop requested.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'b0000000000 0
-run
-run
-run
-noforce sim:/Datapath_TB/UUT/DU/disp_opcode
-run
-run
-run
-run
-run
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-# Break key hit
-# Simulation stop requested.
-# Compile of Datapath_TB.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-# Break key hit
-# Break in Module Dec_Jmp_Bra at C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dec_Jmp_Bra.sv line 31
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Compile of Dec_Jmp_Bra.sv was successful.
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-# Break key hit
-# Simulation stop requested.
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/DJB/i_type
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-# Compile of Dec_Jmp_Bra.sv was successful.
-# Compile of Datapath_TB.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-# Compile of Datapath_TB.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Compile of Datapath_TB.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h000 0
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Compile of Datapath_TB.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h0 0
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-force -freeze sim:/Datapath_TB/UUT/DU/disp_opcode 10'h0 0
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-# Compile of Dec_Jmp_Bra.sv failed with 1 errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-# Compile of Dec_Jmp_Bra.sv failed with 1 errors.
-# Compile of Dec_Jmp_Bra.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-# Break key hit
-# Break at C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/TAG_FIFO.sv line 20
-step -over -current
-# ** UI-Msg (Error): (vsim-12082) Thread or process sim:/Datapath_TB/UUT/DU/TF/#ASSIGN#20 has no step-able lines.
-# 
-step -over -current
-# ** UI-Msg (Error): (vsim-12082) Thread or process sim:/Datapath_TB/UUT/DU/TF/#ASSIGN#20 has no step-able lines.
-# 
-step -over
-# Simulation stop requested.
-step
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-step -over
-# Compile of IFQ.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
+sim:/Datapath_TB/UUT/DU/cdb_data \
+sim:/Datapath_TB/UUT/DU/cdb_tag \
+sim:/Datapath_TB/UUT/DU/cdb_b \
+sim:/Datapath_TB/UUT/DU/cdb_b_taken \
+sim:/Datapath_TB/UUT/DU/cdb_va
+force -freeze sim:/Datapath_TB/UUT/DU/cdb_b 1'h1 0
+run
+noforce sim:/Datapath_TB/UUT/DU/cdb_b
 run
 run
 # Compile of Dispatch_Unit.sv was successful.
-# Compile of IFQ.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2685) [TFMPC] - Too few port connections for 'DU'.  Expected 24, found 21.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'ifq_inst_'.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'disp_imm'.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'issue_full'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
 # Loading sv_std.std
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
@@ -3318,287 +752,7 @@ restart
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Compile of Dispatch_Unit.sv was successful.
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-run
-# ** Warning: (vsim-PLI-3410) Illegal character 'i' in data on line 33 of file "xd.txt".    : C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv(30)
-#    Time: 0 ns  Iteration: 0  Instance: /Datapath_TB/UUT/I_Cache
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -3672,135 +826,18 @@ run
 run
 run
 run
-# Break key hit
-# Simulation stop requested.
 run
-# Break key hit
-# Simulation stop requested.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__4)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
+run
+run
+run
+run
+run
 add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/disp_rd_en
-force -freeze sim:/Datapath_TB/UUT/DU/disp_rd_en 1'h1 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# Compile of IFQ.sv was successful.
+sim:/Datapath_TB/UUT/DU/ifq_inst_
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -3812,6 +849,7 @@ restart
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -3879,7 +917,6 @@ restart
 # Loading work.Register(fast__67)
 # Loading work.RST(fast)
 # Loading work.Register_DW(fast)
-force -freeze sim:/Datapath_TB/UUT/DU/disp_rd_en 1'h0 0
 run
 run
 run
@@ -3899,11 +936,27 @@ run
 run
 run
 run
-force -freeze sim:/Datapath_TB/UUT/DU/disp_rd_en 1'h1 0
+run
+run
+run
+run
+force -freeze sim:/Datapath_TB/UUT/DU/cdb_b 1'h1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -3915,6 +968,7 @@ restart
 # Loading work.Register(fast__2)
 # Loading work.Register(fast__3)
 # Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
 # Loading work.TAG_FIFO(fast)
 # Loading work.Register(fast__4)
 # Loading work.Register(fast__5)
@@ -3982,7 +1036,105 @@ restart
 # Loading work.Register(fast__67)
 # Loading work.RST(fast)
 # Loading work.Register_DW(fast)
-force -freeze sim:/Datapath_TB/UUT/DU/disp_rd_en 1'h1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/Datapath_TB/UUT/DU/cdb_va 1'h1 0
+force -freeze sim:/Datapath_TB/UUT/DU/cdb_va 1'h1 0
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
 run
 run
 run
@@ -3996,14 +1148,9 @@ run
 run
 run
 run
+force -freeze sim:/Datapath_TB/UUT/DU/cdb_b 1'h1 0
 run
-run
-run
-run
-run
-run
-run
-run
+noforce sim:/Datapath_TB/UUT/DU/cdb_b
 run
 run
 run

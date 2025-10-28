@@ -49,11 +49,11 @@ module IFQ (
             write_p <= 5'b0;
 
         else
-            if (disp_jmp_b_va & disp_rd_en_in)
+            if (disp_jmp_b_va)
                 write_p <= 5'b0;
 
             else
-                if (!full &&  disp_rd_en_in)
+                if (!full)
                     write_p <= write_p + 3'b100;
 
 // Read pointer
@@ -62,11 +62,11 @@ module IFQ (
             read_p <= 5'b0;
 
         else
-            if (disp_jmp_b_va & disp_rd_en_in)
+            if (disp_jmp_b_va)
                 read_p <= {3'b000, disp_jmp_b_addr[3:2]};
 
             else 
-                if ((!ifq_empty || (ifq_PC_out == 32'h0040_0000)) && disp_rd_en_in)
+                if (!ifq_empty && disp_rd_en_in)
                     read_p++;
   
 // Full and ifq_empty flags
@@ -76,7 +76,7 @@ module IFQ (
 
 // Instruction selection for first load
     // assign ifq_inst         = disp_rd_en_in ? ((ifq_empty || disp_jmp_b_va) ? rd_bypass : ((rd_reg == 32'b0) ? rd_bypass : rd_reg)) : 32'h0;
-    assign ifq_inst         = disp_rd_en_in ? ((rd_reg == 32'b0) ? rd_bypass : rd_reg) : 32'h0;
+    assign ifq_inst         = (rd_reg == 32'b0) ? rd_bypass : rd_reg;
     // assign ifq_inst         = disp_rd_en_in ? rd_reg : 32'h0;
 
 // Mux for first load

@@ -89,6 +89,12 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
@@ -124,18 +130,17 @@ n@_opt1
 R7
 R1
 T_opt2
-!s110 1761619858
-V@4bYc1AJZgiKigHkhneNg0
+!s110 1761675509
+VT`I0YCfbJM4G>CL8Uf;C[1
 R2
-=37-c85acf71c477-69002f91-3b8-23c8
+=8-c85acf71c477-690108f4-36a-5d80
 R0
 R3
-R4
+!s124 OEM10U144 
 R5
 R6
 n@_opt2
 R7
-R1
 vCDB
 Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 !s110 1761108935
@@ -236,25 +241,50 @@ r1
 R12
 R6
 n@dec_@jmp_@bra
-vDispatch_Unit
+vDispatch_Control
 R8
-!s110 1761619821
+!s110 1761674030
 !i10b 1
-!s100 ;EaYI^KJjGc5fCBjPdN]@1
-IgGha2Kz?Xj<0f^N4HbXa82
+!s100 >DKDf;HhfTlLVb39[l8lo1
+I9W__f9@<2SCU[C@hBlCbY1
 S1
 R9
-w1761619816
-8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
-FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
-!i122 157
-L0 1 73
+w1761673895
+8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Control.sv
+FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Control.sv
+!i122 161
+L0 1 58
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761619820.000000
+!s108 1761674030.000000
+!s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Control.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Control.sv|
+!i113 0
+R12
+R6
+n@dispatch_@control
+vDispatch_Unit
+R8
+!s110 1761675477
+!i10b 1
+!s100 I4DO3T:ig;1:ibGhbI3cG3
+I_BLB6Rj_TDka]b?HaB6@]1
+S1
+R9
+w1761675472
+8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
+FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
+!i122 165
+L0 1 86
+R10
+R11
+r1
+!s85 0
+31
+!s108 1761675476.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv|
 !i113 0
@@ -338,23 +368,23 @@ R6
 n@i_@cache
 vIFQ
 R8
-!s110 1761622035
+!s110 1761622917
 !i10b 1
-!s100 UOi<CzL^>`]<j2U6QXi;O1
-IRO]X]32^ln7eCYQJdbV<`0
+!s100 >K;7E0=21U<G31N]WFBC;2
+IQcCgCY_YO<O=]>M2C_25f3
 S1
 R9
-w1761622031
+w1761622915
 8C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv
 FC:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv
-!i122 158
+!i122 160
 L0 1 103
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761622035.000000
+!s108 1761622917.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv|
 !i113 0
