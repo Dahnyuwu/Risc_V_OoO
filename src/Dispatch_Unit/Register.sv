@@ -20,7 +20,7 @@ module Register #(parameter LENGTH = 32, RSTVALUE = 32'b0)(
     output  logic     [(LENGTH-1):0]      out
 );
 
-    always @(posedge clk) begin
+    always_ff @(posedge clk) begin
         if (!rst)                                                   // Reset condition: set register to RSTVALUE
             out <= RSTVALUE;
 
@@ -45,7 +45,7 @@ module Register_DW #(parameter LENGTH = 32, RSTVALUE = 32'b0)(
     output  logic     [(LENGTH-1):0]      out
 );
 
-    always @(posedge clk) begin
+    always_ff @(posedge clk) begin
         if (!rst)                                                   
             out <= RSTVALUE;
 

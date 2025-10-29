@@ -95,6 +95,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f vlog 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
@@ -130,10 +131,10 @@ n@_opt1
 R7
 R1
 T_opt2
-!s110 1761675509
-VT`I0YCfbJM4G>CL8Uf;C[1
+!s110 1761685033
+VD]G`BP0I6@8][AYXgO85j0
 R2
-=8-c85acf71c477-690108f4-36a-5d80
+=12-c85acf71c477-69012e27-1f-5d80
 R0
 R3
 !s124 OEM10U144 
@@ -168,23 +169,23 @@ R6
 n@c@d@b
 vDatapath
 R8
-!s110 1761612196
+Z13 !s110 1761685004
 !i10b 1
-!s100 iFNX<I8D96Ib_>Q;YVERU0
-IRZhQ8E2fEBcKCTiXXKd;S3
+!s100 ^LH@cbD6CRJ`T`<INoPko1
+Ij15W2QGXnI<9PI2YQ3?YA1
 S1
 R9
-w1761612157
+w1761684992
 8C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv
 FC:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv
-!i122 132
+!i122 167
 L0 1 52
 R10
 R11
 r1
 !s85 0
 31
-Z13 !s108 1761612196.000000
+Z14 !s108 1761685004.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv|
 !i113 0
@@ -268,23 +269,23 @@ R6
 n@dispatch_@control
 vDispatch_Unit
 R8
-!s110 1761675477
+R13
 !i10b 1
-!s100 I4DO3T:ig;1:ibGhbI3cG3
-I_BLB6Rj_TDka]b?HaB6@]1
+!s100 jj?F7gQ]4f3;j>f_dZdTG0
+I<eTmQ_I0hX4:eCbKHS@4O1
 S1
 R9
-w1761675472
+w1761684657
 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
-!i122 165
+!i122 166
 L0 1 86
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761675476.000000
+!s108 1761685003.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv|
 !i113 0
@@ -359,7 +360,7 @@ R11
 r1
 !s85 0
 31
-R13
+!s108 1761612196.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv|
 !i113 0
@@ -368,23 +369,23 @@ R6
 n@i_@cache
 vIFQ
 R8
-!s110 1761622917
+R13
 !i10b 1
-!s100 >K;7E0=21U<G31N]WFBC;2
-IQcCgCY_YO<O=]>M2C_25f3
+!s100 gJ?SSkj0DT;^GL6Zl0dF<1
+ILLONaGaF[BNH[lKojGoaK1
 S1
 R9
-w1761622915
+w1761684993
 8C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv
 FC:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv
-!i122 160
+!i122 168
 L0 1 103
 R10
 R11
 r1
 !s85 0
 31
-!s108 1761622917.000000
+R14
 !s107 C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv|
 !i113 0
@@ -393,15 +394,15 @@ R6
 n@i@f@q
 vRegister
 R8
-Z14 !s110 1761108216
+Z15 !s110 1761108216
 !i10b 1
 !s100 QPC]]XDhI1f<ghkIL701Y3
 IzW8fo[h30Kz^be7R4^g8[0
 S1
 R9
-Z15 w1760394859
-Z16 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
-Z17 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
+Z16 w1760394859
+Z17 8C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
+Z18 FC:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
 !i122 29
 L0 14 23
 R10
@@ -409,24 +410,24 @@ R11
 r1
 !s85 0
 31
-Z18 !s108 1761108216.000000
-Z19 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
-Z20 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
+Z19 !s108 1761108216.000000
+Z20 !s107 C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv|
 !i113 0
 R12
 R6
 n@register
 vRegister_DW
 R8
-R14
+R15
 !i10b 1
 !s100 W2;9F[=XzGN[X>d38XeW@3
 I?Qo>KGMnMA_QVWAiEScCQ1
 S1
 R9
-R15
 R16
 R17
+R18
 !i122 29
 L0 39 27
 R10
@@ -434,9 +435,9 @@ R11
 r1
 !s85 0
 31
-R18
 R19
 R20
+R21
 !i113 0
 R12
 R6

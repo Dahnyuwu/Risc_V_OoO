@@ -1177,3 +1177,111 @@ run
 run
 run
 run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Quartus_Arqui/Dispatch/proj_questa/wave.do
+# Compile of Dispatch_Unit.sv was successful.
+# Compile of Datapath.sv was successful.
+# Compile of IFQ.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2685) [TFMPC] - Too few port connections for 'DU'.  Expected 23, found 21.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'disp_imm'.
+# ** Warning: C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv(38): (vopt-2718) [TFMPC] - Missing connection for port 'issue_full'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__4)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# Warning in wave window restart: (vish-4014) No objects found matching '/Datapath_TB/UUT/DU/ifq_inst_'. 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

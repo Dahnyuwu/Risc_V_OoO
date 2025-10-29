@@ -6,10 +6,10 @@ module IFQ (
 
 // Input Dispatcher 
     input   logic   [31:0]  disp_jmp_b_addr,
-    input   logic           disp_rd_en_in, disp_jmp_b_va, 
+    input   logic           disp_rd_en, disp_jmp_b_va, 
 
 // Output
-    output  logic           ifq_rd_en_out, ifq_empty,
+    output  logic           ifq_rd_en, ifq_empty,
     output  logic   [31:0]  ifq_inst, ifq_PC_in, ifq_PC_out
 );
 
@@ -31,8 +31,8 @@ module IFQ (
 // PC in/out
     Register    #(.RSTVALUE(32'h0040_0000))     PC_in_u     (.clk(clk), .rst(rst), .ena(1'b1), .in(PC_in_16), .out(ifq_PC_in)); 
     Register    #(.RSTVALUE(32'h0040_0000))     PC_out_u    (.clk(clk), .rst(rst), .ena(1'b1), .in(PC_out_4), .out(ifq_PC_out)); 
-    assign PC_in_16     = (disp_jmp_b_va & disp_rd_en_in) ? disp_jmp_b_addr : ((!full && disp_rd_en_in)              ? (ifq_PC_in + 5'b1_0000): ifq_PC_in);
-    assign PC_out_4     = (disp_jmp_b_va & disp_rd_en_in) ? disp_jmp_b_addr : (((!ifq_empty || zeros) && disp_rd_en_in)  ? (ifq_PC_out + 3'b1_00) : ifq_PC_out);
+    assign PC_in_16     = (disp_jmp_b_va & disp_rd_en) ? disp_jmp_b_addr : ((!full && disp_rd_en)              ? (ifq_PC_in + 5'b1_0000): ifq_PC_in);
+    assign PC_out_4     = (disp_jmp_b_va & disp_rd_en) ? disp_jmp_b_addr : (((!ifq_empty || zeros) && disp_rd_en)  ? (ifq_PC_out + 3'b1_00) : ifq_PC_out);
 
 // Reg matrix selector
     assign reg_sel = (write_p[3:2] == 2'b00) ? 4'b0001 :
@@ -41,7 +41,7 @@ module IFQ (
                      (write_p[3:2] == 2'b11) ? 4'b1000 :
                                                4'b0000;
 
-    assign ifq_rd_en_out= 1'b1;
+    assign ifq_rd_en= 1'b1;
 
 // Write pointer
     always_ff @(posedge clk) 
@@ -66,7 +66,7 @@ module IFQ (
                 read_p <= {3'b000, disp_jmp_b_addr[3:2]};
 
             else 
-                if (!ifq_empty && disp_rd_en_in)
+                if (!ifq_empty && disp_rd_en)
                     read_p++;
   
 // Full and ifq_empty flags
@@ -75,9 +75,9 @@ module IFQ (
     assign zeros        = ~(I0_out_ || I1_out_ || I2_out_ || I3_out_);
 
 // Instruction selection for first load
-    // assign ifq_inst         = disp_rd_en_in ? ((ifq_empty || disp_jmp_b_va) ? rd_bypass : ((rd_reg == 32'b0) ? rd_bypass : rd_reg)) : 32'h0;
+    // assign ifq_inst         = disp_rd_en ? ((ifq_empty || disp_jmp_b_va) ? rd_bypass : ((rd_reg == 32'b0) ? rd_bypass : rd_reg)) : 32'h0;
     assign ifq_inst         = (rd_reg == 32'b0) ? rd_bypass : rd_reg;
-    // assign ifq_inst         = disp_rd_en_in ? rd_reg : 32'h0;
+    // assign ifq_inst         = disp_rd_en ? rd_reg : 32'h0;
 
 // Mux for first load
     assign rd_bypass    =   (read_p[1:0] == 2'b00) ?    icache_rd[127:96]:
