@@ -21,7 +21,8 @@ module Dispatch_Unit(
     output  logic   [31:0]  disp_rs1_data, disp_rs2_data, disp_imm,
     output  logic   [5:0]   disp_rd_tag, disp_rs1_tag, disp_rs2_tag, 
     output  logic   [9:0]   disp_opcode,
-    output  logic           disp_rs1_tag_va, disp_rs2_tag_va
+    output  logic   [1:0]   disp_branch,
+    output  logic           disp_rs1_tag_va, disp_rs2_tag_va, disp_valid_int
 );
 
 // Internal variables
@@ -36,12 +37,17 @@ module Dispatch_Unit(
     assign  disp_rd_tag     = tag_out_;
     assign  disp_rs1_tag_va = (~rs1_tag_va_);
     assign  disp_rs1_data   = (~rs1_tag_va_) ? rs1_data_ : cdb_data;
+
     // assign  disp_rs2_tag_va = (~rs2_tag_va_);
         assign  disp_rs2_tag_va = disp_opcode[8] ? 1'b1 : (~rs2_tag_va_);
+
     // assign  disp_rs2_data   = (~rs2_tag_va_) ? rs2_data_ : cdb_data; 
         assign  disp_rs2_data   = disp_opcode[8] ? disp_imm : ((~rs2_tag_va_) ? rs2_data_ : cdb_data); 
+
     assign  branch_ena_     = (|disp_opcode[7:6]);
     assign  inst_           = disp_rd_en ? ifq_inst : 32'b0;
+    assign  disp_valid_int  = ~(|disp_opcode[4:3] | disp_opcode[9]);    // Int queue and not jump
+    assign  disp_branch     = disp_opcode[7:6];
 
 // Instancias
     Register_File RF(

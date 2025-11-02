@@ -12,12 +12,35 @@ Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
 Top level modules:
 	Dispatch_Unit_TB
 
+} {} {}} C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Register.sv
+Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+-- Compiling module Register
+-- Compiling module Register_DW
+
+Top level modules:
+	Register
+	Register_DW
+
+} {} {}} C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Unit.sv
+Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+-- Compiling module Dispatch_Unit
+
+Top level modules:
+	Dispatch_Unit
+
 } {} {}} C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Datapath/Datapath.sv
 Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
 -- Compiling module Datapath
 
 Top level modules:
 	Datapath
+
+} {} {}} C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Shift_Register.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Shift_Register.sv
+Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+-- Compiling module Shift_Register
+
+Top level modules:
+	Shift_Register
 
 } {} {}} C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv
 Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
@@ -61,12 +84,26 @@ Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
 Top level modules:
 	Dispatcher
 
+} {} {}} C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Issue_Queue_TB.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Issue_Queue_TB.sv
+Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+-- Compiling module Issue_Queue_TB
+
+Top level modules:
+	Issue_Queue_TB
+
 } {} {}} C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Control.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/Dispatch_Control.sv
 Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
 -- Compiling module Dispatch_Control
 
 Top level modules:
 	Dispatch_Control
+
+} {} {}} C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/E_Queue.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/E_Queue.sv
+Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+-- Compiling module E_Queue
+
+Top level modules:
+	E_Queue
 
 } {} {}} C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/I_Cache/I_Cache.sv
 Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
@@ -81,12 +118,5 @@ Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
 
 Top level modules:
 	RST
-
-} {} {}} C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/E_Queue.sv {1 {vlog -work work -vopt -sv -stats=none C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/E_Queue.sv
-Questa Intel Starter FPGA Edition-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
--- Compiling module E_Queue
-
-Top level modules:
-	E_Queue
 
 } {} {}}
