@@ -6,8 +6,7 @@ module Dec_Jmp_Bra(
 // Outputs    
     output  logic   [31:0]  se, jmp_add,
     output  logic   [9:0]   opcode_out,
-    output  logic   [4:0]   rs1_add, rs2_add, rd_add,
-    output  logic           imm_f
+    output  logic   [4:0]   rs1_add, rs2_add, rd_add
 );
 
 // Decoder
@@ -35,8 +34,6 @@ module Dec_Jmp_Bra(
                         ((opcode == 7'b0110111) || (opcode == 7'b0010111))                                                      ? U :
                         (opcode == 7'b1101111)                                                                                  ? J :
                                                                                                                                 3'h7;
-    assign  imm_f   =   (i_type == I) ? 1'b1: 1'b0;
-
     // assign  rd_add  =   ((i_type == R) || (i_type == I) || (i_type == U) || (i_type == J))    ? inst[11:7]  : 5'b0;
     assign  rd_add  =   (i_type == R) || (i_type == I) || (i_type == U)                       ? inst[11:7]  : 5'b0;
     assign  rs1_add =   ((i_type == R) || (i_type == I) || (i_type == S) || (i_type == B))    ? inst[19:15] : 5'b0;
@@ -60,7 +57,7 @@ module Dec_Jmp_Bra(
                                 ((op_functs & 17'h1FFFF) == 17'b0110011_000_0000000) ? 10'b0_0_00_0_00_000 :      // ADD +
                                 ((op_functs & 17'h1FFFF) == 17'b0110011_000_0100000) ? 10'b0_0_00_0_00_001 :      // SUB -
                                 ((op_functs & 17'h1FFFF) == 17'b0110011_111_0000000) ? 10'b0_0_00_0_00_010 :      // AND &
-                                ((op_functs & 17'h1FF80) == 17'b0010011_110_0000000) ? 10'b0_0_00_0_00_011 :      // OR  |
+                                ((op_functs & 17'h1FF80) == 17'b0110011_110_0000000) ? 10'b0_0_00_0_00_011 :      // OR  |
                                 ((op_functs & 17'h1FF80) == 17'b0110011_010_0000000) ? 10'b0_0_00_1_00_001 :      // SLT <
                                     // MUL/DIV - Extension0
                                     ((op_functs & 17'h1FFFF) == 17'b0110011_000_0000001) ? 10'b0_0_00_0_01_000 :  // MUL *
@@ -69,7 +66,7 @@ module Dec_Jmp_Bra(
                                 // I - Type         
                                 ((op_functs & 17'h1FF80) == 17'b0010011_000_0000000) ? 10'b0_1_00_0_00_000 :      // ADDI +
                                 ((op_functs & 17'h1FF80) == 17'b0010011_111_0000000) ? 10'b0_1_00_0_00_010 :      // ANDI &
-                                ((op_functs & 17'h1FFFF) == 17'b0110011_110_0000000) ? 10'b0_1_00_0_00_011 :      // ORI  |
+                                ((op_functs & 17'h1FFFF) == 17'b0010011_110_0000000) ? 10'b0_1_00_0_00_011 :      // ORI  |
                                 ((op_functs & 17'h1FF80) == 17'b0010011_010_0000000) ? 10'b0_1_00_1_00_001 :      // SLTI <
                                 ((op_functs & 17'h1FFFF) == 17'b0010011_001_0000000) ? 10'b0_1_00_0_00_100 :      // SLLI <<
 

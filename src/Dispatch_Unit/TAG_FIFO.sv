@@ -1,7 +1,7 @@
 module TAG_FIFO (
 // Inputs
     input   logic           clk, rst,
-    input   logic           cdb_tag_va,
+    input   logic           cdb_tag_va, rd_en,
     input   logic   [5:0]   cdb_tag,
     input   logic   [4:0]   rd,
 
@@ -35,7 +35,7 @@ module TAG_FIFO (
             read_p <= 7'b000_0000;
 
         else
-            if (rd_va)
+            if (rd_va && rd_en)
                 read_p++;
     end
 

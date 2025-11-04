@@ -22,77 +22,77 @@ module RST(
     genvar j;
     generate
         for (j = 0; j < 32; j++) begin
-            assign w_ena_2[j] = (token[j] == cdb_token);
+            assign w_ena_2[j] = (cdb_token[6] && token[j] == cdb_token);
         end
     endgenerate
 
-    assign {rs1_tag_va, rs1_tag} =      ((token[00][6] == 1'b1) && (rs1_add == token[00][5:0])) ? {token[00][6], 5'h00} :
-                                        ((token[01][6] == 1'b1) && (rs1_add == token[01][5:0])) ? {token[01][6], 5'h01} :
-                                        ((token[02][6] == 1'b1) && (rs1_add == token[02][5:0])) ? {token[02][6], 5'h02} :
-                                        ((token[03][6] == 1'b1) && (rs1_add == token[03][5:0])) ? {token[03][6], 5'h03} :
-                                        ((token[04][6] == 1'b1) && (rs1_add == token[04][5:0])) ? {token[04][6], 5'h04} :
-                                        ((token[05][6] == 1'b1) && (rs1_add == token[05][5:0])) ? {token[05][6], 5'h05} :
-                                        ((token[06][6] == 1'b1) && (rs1_add == token[06][5:0])) ? {token[06][6], 5'h06} :
-                                        ((token[07][6] == 1'b1) && (rs1_add == token[07][5:0])) ? {token[07][6], 5'h07} :
-                                        ((token[08][6] == 1'b1) && (rs1_add == token[08][5:0])) ? {token[08][6], 5'h08} :
-                                        ((token[09][6] == 1'b1) && (rs1_add == token[09][5:0])) ? {token[09][6], 5'h09} :
-                                        ((token[10][6] == 1'b1) && (rs1_add == token[10][5:0])) ? {token[10][6], 5'h0A} :
-                                        ((token[11][6] == 1'b1) && (rs1_add == token[11][5:0])) ? {token[11][6], 5'h0B} :
-                                        ((token[12][6] == 1'b1) && (rs1_add == token[12][5:0])) ? {token[12][6], 5'h0C} :
-                                        ((token[13][6] == 1'b1) && (rs1_add == token[13][5:0])) ? {token[13][6], 5'h0D} :
-                                        ((token[14][6] == 1'b1) && (rs1_add == token[14][5:0])) ? {token[14][6], 5'h0E} :
-                                        ((token[15][6] == 1'b1) && (rs1_add == token[15][5:0])) ? {token[15][6], 5'h0F} :
-                                        ((token[16][6] == 1'b1) && (rs1_add == token[16][5:0])) ? {token[16][6], 5'h10} :
-                                        ((token[17][6] == 1'b1) && (rs1_add == token[17][5:0])) ? {token[17][6], 5'h11} :
-                                        ((token[18][6] == 1'b1) && (rs1_add == token[18][5:0])) ? {token[18][6], 5'h12} :
-                                        ((token[19][6] == 1'b1) && (rs1_add == token[19][5:0])) ? {token[19][6], 5'h13} :
-                                        ((token[20][6] == 1'b1) && (rs1_add == token[20][5:0])) ? {token[20][6], 5'h14} :
-                                        ((token[21][6] == 1'b1) && (rs1_add == token[21][5:0])) ? {token[21][6], 5'h15} :
-                                        ((token[22][6] == 1'b1) && (rs1_add == token[22][5:0])) ? {token[22][6], 5'h16} :
-                                        ((token[23][6] == 1'b1) && (rs1_add == token[23][5:0])) ? {token[23][6], 5'h17} :
-                                        ((token[24][6] == 1'b1) && (rs1_add == token[24][5:0])) ? {token[24][6], 5'h18} :
-                                        ((token[25][6] == 1'b1) && (rs1_add == token[25][5:0])) ? {token[25][6], 5'h19} :
-                                        ((token[26][6] == 1'b1) && (rs1_add == token[26][5:0])) ? {token[26][6], 5'h1A} :
-                                        ((token[27][6] == 1'b1) && (rs1_add == token[27][5:0])) ? {token[27][6], 5'h1B} :
-                                        ((token[28][6] == 1'b1) && (rs1_add == token[28][5:0])) ? {token[28][6], 5'h1C} :
-                                        ((token[29][6] == 1'b1) && (rs1_add == token[29][5:0])) ? {token[29][6], 5'h1D} :
-                                        ((token[30][6] == 1'b1) && (rs1_add == token[30][5:0])) ? {token[30][6], 5'h1E} :
-                                        ((token[31][6] == 1'b1) && (rs1_add == token[31][5:0])) ? {token[31][6], 5'h1F} :
-                                        5'h00;
+    assign {rs1_tag_va, rs1_tag} =      ((token[00][6]) && (rs1_add == 5'h00)) ? token[00] :
+                                        ((token[01][6]) && (rs1_add == 5'h01)) ? token[01] :
+                                        ((token[02][6]) && (rs1_add == 5'h02)) ? token[02] :
+                                        ((token[03][6]) && (rs1_add == 5'h03)) ? token[03] :
+                                        ((token[04][6]) && (rs1_add == 5'h04)) ? token[04] :
+                                        ((token[05][6]) && (rs1_add == 5'h05)) ? token[05] :
+                                        ((token[06][6]) && (rs1_add == 5'h06)) ? token[06] :
+                                        ((token[07][6]) && (rs1_add == 5'h07)) ? token[07] :
+                                        ((token[08][6]) && (rs1_add == 5'h08)) ? token[08] :
+                                        ((token[09][6]) && (rs1_add == 5'h09)) ? token[09] :
+                                        ((token[10][6]) && (rs1_add == 5'h0A)) ? token[10] :
+                                        ((token[11][6]) && (rs1_add == 5'h0B)) ? token[11] :
+                                        ((token[12][6]) && (rs1_add == 5'h0C)) ? token[12] :
+                                        ((token[13][6]) && (rs1_add == 5'h0D)) ? token[13] :
+                                        ((token[14][6]) && (rs1_add == 5'h0E)) ? token[14] :
+                                        ((token[15][6]) && (rs1_add == 5'h0F)) ? token[15] :
+                                        ((token[16][6]) && (rs1_add == 5'h10)) ? token[16] :
+                                        ((token[17][6]) && (rs1_add == 5'h11)) ? token[17] :
+                                        ((token[18][6]) && (rs1_add == 5'h12)) ? token[18] :
+                                        ((token[19][6]) && (rs1_add == 5'h13)) ? token[19] :
+                                        ((token[20][6]) && (rs1_add == 5'h14)) ? token[20] :
+                                        ((token[21][6]) && (rs1_add == 5'h15)) ? token[21] :
+                                        ((token[22][6]) && (rs1_add == 5'h16)) ? token[22] :
+                                        ((token[23][6]) && (rs1_add == 5'h17)) ? token[23] :
+                                        ((token[24][6]) && (rs1_add == 5'h18)) ? token[24] :
+                                        ((token[25][6]) && (rs1_add == 5'h19)) ? token[25] :
+                                        ((token[26][6]) && (rs1_add == 5'h1A)) ? token[26] :
+                                        ((token[27][6]) && (rs1_add == 5'h1B)) ? token[27] :
+                                        ((token[28][6]) && (rs1_add == 5'h1C)) ? token[28] :
+                                        ((token[29][6]) && (rs1_add == 5'h1D)) ? token[29] :
+                                        ((token[30][6]) && (rs1_add == 5'h1E)) ? token[30] :
+                                        ((token[31][6]) && (rs1_add == 5'h1F)) ? token[31] :
+                                        7'h00;
 
-    assign {rs2_tag_va, rs2_tag} =      ((token[00][6] == 1'b1) && (rs2_add == token[00][5:0])) ? {token[00][6], 5'h00} :
-                                        ((token[01][6] == 1'b1) && (rs2_add == token[01][5:0])) ? {token[01][6], 5'h01} :
-                                        ((token[02][6] == 1'b1) && (rs2_add == token[02][5:0])) ? {token[02][6], 5'h02} :
-                                        ((token[03][6] == 1'b1) && (rs2_add == token[03][5:0])) ? {token[03][6], 5'h03} :
-                                        ((token[04][6] == 1'b1) && (rs2_add == token[04][5:0])) ? {token[04][6], 5'h04} :
-                                        ((token[05][6] == 1'b1) && (rs2_add == token[05][5:0])) ? {token[05][6], 5'h05} :
-                                        ((token[06][6] == 1'b1) && (rs2_add == token[06][5:0])) ? {token[06][6], 5'h06} :
-                                        ((token[07][6] == 1'b1) && (rs2_add == token[07][5:0])) ? {token[07][6], 5'h07} :
-                                        ((token[08][6] == 1'b1) && (rs2_add == token[08][5:0])) ? {token[08][6], 5'h08} :
-                                        ((token[09][6] == 1'b1) && (rs2_add == token[09][5:0])) ? {token[09][6], 5'h09} :
-                                        ((token[10][6] == 1'b1) && (rs2_add == token[10][5:0])) ? {token[10][6], 5'h0A} :
-                                        ((token[11][6] == 1'b1) && (rs2_add == token[11][5:0])) ? {token[11][6], 5'h0B} :
-                                        ((token[12][6] == 1'b1) && (rs2_add == token[12][5:0])) ? {token[12][6], 5'h0C} :
-                                        ((token[13][6] == 1'b1) && (rs2_add == token[13][5:0])) ? {token[13][6], 5'h0D} :
-                                        ((token[14][6] == 1'b1) && (rs2_add == token[14][5:0])) ? {token[14][6], 5'h0E} :
-                                        ((token[15][6] == 1'b1) && (rs2_add == token[15][5:0])) ? {token[15][6], 5'h0F} :
-                                        ((token[16][6] == 1'b1) && (rs2_add == token[16][5:0])) ? {token[16][6], 5'h10} :
-                                        ((token[17][6] == 1'b1) && (rs2_add == token[17][5:0])) ? {token[17][6], 5'h11} :
-                                        ((token[18][6] == 1'b1) && (rs2_add == token[18][5:0])) ? {token[18][6], 5'h12} :
-                                        ((token[19][6] == 1'b1) && (rs2_add == token[19][5:0])) ? {token[19][6], 5'h13} :
-                                        ((token[20][6] == 1'b1) && (rs2_add == token[20][5:0])) ? {token[20][6], 5'h14} :
-                                        ((token[21][6] == 1'b1) && (rs2_add == token[21][5:0])) ? {token[21][6], 5'h15} :
-                                        ((token[22][6] == 1'b1) && (rs2_add == token[22][5:0])) ? {token[22][6], 5'h16} :
-                                        ((token[23][6] == 1'b1) && (rs2_add == token[23][5:0])) ? {token[23][6], 5'h17} :
-                                        ((token[24][6] == 1'b1) && (rs2_add == token[24][5:0])) ? {token[24][6], 5'h18} :
-                                        ((token[25][6] == 1'b1) && (rs2_add == token[25][5:0])) ? {token[25][6], 5'h19} :
-                                        ((token[26][6] == 1'b1) && (rs2_add == token[26][5:0])) ? {token[26][6], 5'h1A} :
-                                        ((token[27][6] == 1'b1) && (rs2_add == token[27][5:0])) ? {token[27][6], 5'h1B} :
-                                        ((token[28][6] == 1'b1) && (rs2_add == token[28][5:0])) ? {token[28][6], 5'h1C} :
-                                        ((token[29][6] == 1'b1) && (rs2_add == token[29][5:0])) ? {token[29][6], 5'h1D} :
-                                        ((token[30][6] == 1'b1) && (rs2_add == token[30][5:0])) ? {token[30][6], 5'h1E} :
-                                        ((token[31][6] == 1'b1) && (rs2_add == token[31][5:0])) ? {token[31][6], 5'h1F} :
-                                        5'h00;
+    assign {rs2_tag_va, rs2_tag} =      ((token[00][6]) && (rs2_add == 5'h00)) ? token[00] :
+                                        ((token[01][6]) && (rs2_add == 5'h01)) ? token[01] :
+                                        ((token[02][6]) && (rs2_add == 5'h02)) ? token[02] :
+                                        ((token[03][6]) && (rs2_add == 5'h03)) ? token[03] :
+                                        ((token[04][6]) && (rs2_add == 5'h04)) ? token[04] :
+                                        ((token[05][6]) && (rs2_add == 5'h05)) ? token[05] :
+                                        ((token[06][6]) && (rs2_add == 5'h06)) ? token[06] :
+                                        ((token[07][6]) && (rs2_add == 5'h07)) ? token[07] :
+                                        ((token[08][6]) && (rs2_add == 5'h08)) ? token[08] :
+                                        ((token[09][6]) && (rs2_add == 5'h09)) ? token[09] :
+                                        ((token[10][6]) && (rs2_add == 5'h0A)) ? token[10] :
+                                        ((token[11][6]) && (rs2_add == 5'h0B)) ? token[11] :
+                                        ((token[12][6]) && (rs2_add == 5'h0C)) ? token[12] :
+                                        ((token[13][6]) && (rs2_add == 5'h0D)) ? token[13] :
+                                        ((token[14][6]) && (rs2_add == 5'h0E)) ? token[14] :
+                                        ((token[15][6]) && (rs2_add == 5'h0F)) ? token[15] :
+                                        ((token[16][6]) && (rs2_add == 5'h10)) ? token[16] :
+                                        ((token[17][6]) && (rs2_add == 5'h11)) ? token[17] :
+                                        ((token[18][6]) && (rs2_add == 5'h12)) ? token[18] :
+                                        ((token[19][6]) && (rs2_add == 5'h13)) ? token[19] :
+                                        ((token[20][6]) && (rs2_add == 5'h14)) ? token[20] :
+                                        ((token[21][6]) && (rs2_add == 5'h15)) ? token[21] :
+                                        ((token[22][6]) && (rs2_add == 5'h16)) ? token[22] :
+                                        ((token[23][6]) && (rs2_add == 5'h17)) ? token[23] :
+                                        ((token[24][6]) && (rs2_add == 5'h18)) ? token[24] :
+                                        ((token[25][6]) && (rs2_add == 5'h19)) ? token[25] :
+                                        ((token[26][6]) && (rs2_add == 5'h1A)) ? token[26] :
+                                        ((token[27][6]) && (rs2_add == 5'h1B)) ? token[27] :
+                                        ((token[28][6]) && (rs2_add == 5'h1C)) ? token[28] :
+                                        ((token[29][6]) && (rs2_add == 5'h1D)) ? token[29] :
+                                        ((token[30][6]) && (rs2_add == 5'h1E)) ? token[30] :
+                                        ((token[31][6]) && (rs2_add == 5'h1F)) ? token[31] :
+                                        7'h00;
 
     assign  rd_add_out  =               (cdb_token == token[00]) ? 5'h00 :
                                         (cdb_token == token[01]) ? 5'h01 :

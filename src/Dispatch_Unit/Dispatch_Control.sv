@@ -9,10 +9,11 @@ module Dispatch_Control(
     output  logic   rd_en
 );
 
-    logic   state;
+    logic   [1:0] state;
 
-    localparam keep  = 1'b0;    // State
-    localparam stall = 1'b1;
+    localparam keep  = 2'b00;    // State
+    localparam stallb = 2'b01;
+    localparam stallf = 2'b10;
 
     always_ff @(posedge clk) begin
         if (!rst)
@@ -20,17 +21,30 @@ module Dispatch_Control(
 
         case (state)
             keep:
-                if (branch_ena && !issue_full)
-                    state <= stall;
-                else 
-                    state <= keep;
+                if (branch_ena)
+                    state <= stallb;
 
-            stall:
+                else
+                    if (issue_full)
+                        state <= stallf;
+                
+                    else 
+                        state <= keep;
+
+            stallb:
                 if (cdb_b)
                     state <= keep;
 
                 else
-                    state <= stall; 
+                    state <= stallb;                     
+
+            stallf:
+                if (!issue_full)
+                    state <= keep;
+
+                else
+                    state <= stallf; 
+
             
             default:
                 state <= keep; 
@@ -39,13 +53,26 @@ module Dispatch_Control(
 
     end 
 
-    always_ff @(state) begin
+    always_ff @(*) begin
         case (state)
             keep:
-                rd_en <= 1'b1;
+                if (branch_ena || issue_full)
+                    rd_en <= 1'b0;
 
-            stall:
-                rd_en <= 1'b0;
+                else
+                    rd_en <= 1'b1;
+
+            stallb:
+                if (cdb_b)
+                    rd_en <= 1'b1;
+                else 
+                    rd_en <= 1'b0;
+            
+            stallf:
+                if (!issue_full)
+                    rd_en <= 1'b1;
+                else 
+                    rd_en <= 1'b0;
 
             default: 
                 rd_en <= 1'b1;

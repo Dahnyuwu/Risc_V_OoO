@@ -20,34 +20,42 @@ module Dispatch_Unit(
 // Output to Issue Queue
     output  logic   [31:0]  disp_rs1_data, disp_rs2_data, disp_imm,
     output  logic   [5:0]   disp_rd_tag, disp_rs1_tag, disp_rs2_tag, 
-    output  logic   [9:0]   disp_opcode,
+    output  logic   [2:0]   disp_opcode,
     output  logic   [1:0]   disp_branch,
-    output  logic           disp_rs1_tag_va, disp_rs2_tag_va, disp_valid_int
+    output  logic           disp_rs1_tag_va, disp_rs2_tag_va, disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_lw_sw
 );
 
 // Internal variables
     logic   [31:0]  rs1_data_, rs2_data_, WEROut_, jmp_add_, inst_;
+    logic   [9:0]   opcode_;
     logic   [5:0]   tag_out_;
     logic   [4:0]   rd_add_, rd_add__, rs1_add_, rs2_add_;
-    logic           rd_va_, rs1_tag_va_, rs2_tag_va_, imm_f_, branch_ena_;
+    logic           rd_va_, rs1_tag_va_, rs2_tag_va_, branch_ena_;
 
 // Assigns
-    assign  disp_jmp_b_va   = (disp_opcode[9] | cdb_b_taken);
+    assign  disp_jmp_b_va   = (opcode_[9] | cdb_b_taken);
     assign  disp_jmp_b_addr = ~cdb_b ? jmp_add_ : cdb_data;
     assign  disp_rd_tag     = tag_out_;
-    assign  disp_rs1_tag_va = (~rs1_tag_va_);
+    assign  disp_rs1_tag_va = (cdb_va && disp_rs1_tag == cdb_tag) ? 1'b1: (~rs1_tag_va_);
     assign  disp_rs1_data   = (~rs1_tag_va_) ? rs1_data_ : cdb_data;
+    assign  disp_opcode     = (|opcode_[7:6]) ? 3'b001 : opcode_[2:0];
 
     // assign  disp_rs2_tag_va = (~rs2_tag_va_);
-        assign  disp_rs2_tag_va = disp_opcode[8] ? 1'b1 : (~rs2_tag_va_);
+        assign  disp_rs2_tag_va = (cdb_va && disp_rs2_tag == cdb_tag) ? 1'b1 : (opcode_[8] ? 1'b1 : (~rs2_tag_va_));
 
     // assign  disp_rs2_data   = (~rs2_tag_va_) ? rs2_data_ : cdb_data; 
-        assign  disp_rs2_data   = disp_opcode[8] ? disp_imm : ((~rs2_tag_va_) ? rs2_data_ : cdb_data); 
+        assign  disp_rs2_data   = opcode_[8] ? disp_imm : ((~rs2_tag_va_) ? rs2_data_ : cdb_data); 
 
-    assign  branch_ena_     = (|disp_opcode[7:6]);
-    assign  inst_           = disp_rd_en ? ifq_inst : 32'b0;
-    assign  disp_valid_int  = ~(|disp_opcode[4:3] | disp_opcode[9]);    // Int queue and not jump
-    assign  disp_branch     = disp_opcode[7:6];
+        assign  branch_ena_     = (|opcode_[7:6]);
+        assign  inst_           = disp_rd_en ? ifq_inst : 32'b0;
+        assign  disp_branch     = opcode_[7:6];
+
+    // Issue queue selector
+        assign  {disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_lw_sw} = (disp_rd_en && {opcode_[9], opcode_[4:3]} == 3'b0_00)                    ?   4'b1000 :       // Int queue
+                                                                                     (disp_rd_en && {opcode_[9], opcode_[7:6], opcode_[4:3]} == 5'b0_00_01)   ?   4'b0100 :       // Mul queue
+                                                                                     (disp_rd_en && {opcode_[9], opcode_[7:6], opcode_[4:3]} == 5'b0_00_10)   ?   4'b0010 :       // Div queue
+                                                                                     (disp_rd_en && {opcode_[9], opcode_[7:6], opcode_[4:3]} == 5'b0_00_11)   ?   4'b0001 :       // SW-LW queue
+                                                                                                                                                    4'b0;
 
 // Instancias
     Register_File RF(
@@ -62,13 +70,13 @@ module Dispatch_Unit(
     // Inputs
         .inst(inst_), .pc(ifq_pc4),
     // Outputs
-        .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add(rd_add_), .opcode_out(disp_opcode), .imm_f(imm_f_), .se(disp_imm), .jmp_add(jmp_add_)
+        .rs1_add(rs1_add_), .rs2_add(rs2_add_), .rd_add(rd_add_), .opcode_out(opcode_), .se(disp_imm), .jmp_add(jmp_add_)
     );
 
     Dispatch_Control DC(
     // Inputs
         .clk(clk), .rst(rst),
-        .branch_ena(branch_ena_), .cdb_b(cdb_b), .issue_full(1'b0),
+        .branch_ena(branch_ena_), .cdb_b(cdb_b), .issue_full(issue_full),
     // Outpus 
         .rd_en(disp_rd_en)
     );
@@ -76,7 +84,7 @@ module Dispatch_Unit(
     TAG_FIFO TF(
     // Inputs
         .clk(clk), .rst(rst), 
-        .rd(rd_add_), .cdb_tag_va(cdb_va), .cdb_tag(cdb_tag), 
+        .rd(rd_add_), .cdb_tag_va(cdb_va), .cdb_tag(cdb_tag), .rd_en(disp_rd_en),
     // Outputs
         .full(), .empty(), .rd_va(rd_va_), .tag_out(tag_out_)
     );
