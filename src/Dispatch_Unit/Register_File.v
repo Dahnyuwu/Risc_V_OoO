@@ -41,7 +41,8 @@ module Register_File(
             else if (i == 2) begin
                 // Special case: Register 2 (x2) - Stack Pointer
                 // Initialized to 0xFFFF_FFF0
-                Register #(.RSTVALUE(32'hFFFF_FFF0)) RegisterSP(
+                // Register #(.RSTVALUE(32'hFFFF_FFF0)) RegisterSP(
+                Register #(.RSTVALUE(32'h7FFF_EFFC)) RegisterSP(
                     .clk(clk),
                     .rst(rst),
                     .in(rd_data),

@@ -33,13 +33,13 @@ module Shift_Register_LW(
 
     input   logic   [31:0]  rs1_data_in, rs2_data_in, imm_in, addr_in,
     input   logic   [5:0]   rs1_tag_in, rs2_tag_in, rd_tag_in, 
-    input   logic   [2:0]   opcode_in,
+    input   logic           opcode_in,
     input   logic           rs1_va_in, rs2_va_in, valid_in, s_ena, u_ena,
 
 // Output
     output  logic   [31:0]  rs1_data_out, rs2_data_out, imm_out, addr_out,
     output  logic   [5:0]   rs1_tag_out, rs2_tag_out, rd_tag_out, 
-    output  logic   [2:0]   opcode_out,
+    output  logic           opcode_out,
     output  logic           rs1_va_out, rs2_va_out, valid_out
 );
     

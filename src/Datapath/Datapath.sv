@@ -1,13 +1,15 @@
 module Datapath(
 // Inputs
-    input   logic   clk, rst, cdb_va, cdb_b_taken, cdb_b,
-
-    input   logic   [5:0] cdb_tag,
-    input   logic   [31:0] cdb_data
+    input   logic   clk, rst
 );
 
     // Internal i-cache
         logic   [127:0] icache_rd;
+
+    // Internal CDB
+    logic   [31:0]  cdb_data;
+    logic   [5:0]   cdb_tag;
+    logic           cdb_va, cdb_b_taken, cdb_b;
 
     // Internal IFQ
     logic   [31:0]  ifq_pc_in, ifq_pc_out, ifq_inst;
@@ -97,12 +99,12 @@ module Datapath(
     // );
 
     Issue_Queue     IQI (.disp_valid(disp_valid_int), .issue_full(issue_full_int), .issue_a(issue_a_int), .issue_b(issue_b_int), .issue_rd_tag(issue_rd_tag_int), .issue_opcode(issue_opcode_int), .issue_va(issue_va_int), .*);
-    Issue_Queue     IQM (.disp_valid(disp_valid_mul), .issue_full(issue_full_mul), .issue_a(issue_a_mul), .issue_b(issue_b_mul), .issue_rd_tag(issue_rd_tag_mul), .issue_opcode(issue_opcode_mul), .issue_va(issue_va_mul), .*);
-    Issue_Queue     IQD (.disp_valid(disp_valid_div), .issue_full(issue_full_div), .issue_a(issue_a_div), .issue_b(issue_b_div), .issue_rd_tag(issue_rd_tag_div), .issue_opcode(issue_opcode_div), .issue_va(issue_va_div), .*);
-    Issue_Queue_LS  IQLS(.disp_valid(disp_valid_ls), .issue_full(issue_full_ls), .issue_a(issue_a_ls), .issue_b(issue_b_ls), .issue_rd_tag(issue_rd_tag_ls), .issue_opcode(issue_opcode_ls), .issue_va(issue_va_ls), .*);
+    Issue_Queue     IQM (.disp_valid(disp_valid_mul), .disp_opcode({2'b0, disp_opcode[0]}), .issue_full(issue_full_mul), .issue_a(issue_a_mul), .issue_b(issue_b_mul), .issue_rd_tag(issue_rd_tag_mul), .issue_opcode(issue_opcode_mul), .issue_va(issue_va_mul), .*);
+    Issue_Queue     IQD (.disp_valid(disp_valid_div), .disp_opcode({2'b0, disp_opcode[0]}), .issue_full(issue_full_div), .issue_a(issue_a_div), .issue_b(issue_b_div), .issue_rd_tag(issue_rd_tag_div), .issue_opcode(issue_opcode_div), .issue_va(issue_va_div), .*);
+    Issue_Queue_LS  IQLS(.disp_valid(disp_valid_ls), .disp_opcode(disp_opcode[0]), .issue_full(issue_full_ls), .issue_a(issue_a_ls), .issue_b(issue_b_ls), .issue_rd_tag(issue_rd_tag_ls), .issue_opcode(issue_opcode_ls), .issue_va(issue_va_ls), .*);
 
 
-    CDB         CDB(.a(issue_a_int), .b(issue_b_int), .va(issue_va_int), .opcode(issue_opcode_int), .rd_tag(issue_rd_tag_int), .cdb_tag(cdb_tag), .cdb_data(cdb_data), .cdb_va(cdb_va) );
+    CDB         CDB(.a(issue_a_int), .b(issue_b_int), .va(issue_va_int), .opcode(issue_opcode_int), .rd_tag(issue_rd_tag_int), .*);
 
 
 

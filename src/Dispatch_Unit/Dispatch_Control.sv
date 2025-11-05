@@ -53,26 +53,16 @@ module Dispatch_Control(
 
     end 
 
-    always_ff @(*) begin
+    always_ff @(state) begin
         case (state)
             keep:
-                if (branch_ena || issue_full)
-                    rd_en <= 1'b0;
-
-                else
-                    rd_en <= 1'b1;
+                rd_en <= 1'b1;
 
             stallb:
-                if (cdb_b)
-                    rd_en <= 1'b1;
-                else 
-                    rd_en <= 1'b0;
+                rd_en <= 1'b0;
             
             stallf:
-                if (!issue_full)
-                    rd_en <= 1'b1;
-                else 
-                    rd_en <= 1'b0;
+                rd_en <= 1'b0;
 
             default: 
                 rd_en <= 1'b1;

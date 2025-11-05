@@ -1,13 +1,11 @@
 module Datapath_TB();
 
-    logic   clk, rst, cdb_b_taken, cdb_b;
+    logic   clk, rst;
     integer i;
 
-    Datapath   UUT(.clk(clk), .rst(rst), .cdb_b_taken(cdb_b_taken), .cdb_b(cdb_b));
+    Datapath   UUT(.clk(clk), .rst(rst));
 
     initial begin
-        cdb_b = 0;
-        cdb_b_taken = 1'b0;
         clk = 1'b1;
         rst = 1'b0;
         #10 rst = 1'b1;

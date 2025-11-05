@@ -3,7 +3,7 @@ module Issue_Queue_LS(
 // Input Dispatcher
     input   logic   [31:0]  disp_rs1_data, disp_rs2_data, disp_imm,
     input   logic   [5:0]   disp_rs1_tag, disp_rs2_tag, disp_rd_tag,
-    input   logic   [2:0]   disp_opcode,
+    input   logic           disp_opcode,
     input   logic   [1:0]   disp_branch,
     input   logic           disp_rs1_tag_va, disp_rs2_tag_va, disp_valid,
 
@@ -53,7 +53,7 @@ module Issue_Queue_LS(
     logic   [5:0]   rs2_tag_out3_, rs2_tag_out2_, rs2_tag_out1_, rs2_tag_out0_;
 
 // Opcode out
-    logic   [2:0]   opcode_out3_, opcode_out2_, opcode_out1_, opcode_out0_;
+    logic           opcode_out3_, opcode_out2_, opcode_out1_, opcode_out0_;
 
 // Valid out
     logic           valid_out3_, valid_out2_, valid_out1_, valid_out0_;

@@ -41,7 +41,7 @@ module Dec_Jmp_Bra(
     assign  funct3  =   ((i_type == R) || (i_type == I) || (i_type == S) || (i_type == B))    ? inst[14:12] : 3'b0;
     assign  funct7  =   (i_type == R) ? inst[31:25] : 7'b0;
 
-    // Conditional assignment based on instruction opcode (bits 6:0)
+// Conditional assignment based on instruction opcode (bits 6:0)
     assign  se      =   (i_type == R)                               ? 32'b0 :                                                                       // R-type (no immediate)
                         (i_type == I)                               ? {{20{inst[31]}}, inst[31:20]} :                                               // I-type: Sign extends bit 31 and concatenates with bits 31:20
                         (i_type == S)                               ? {{20{inst[31]}}, inst[31:25], inst[11:7]} :                                   // S-type: Sign extends and combines bits 31:25 and 11:7
@@ -52,7 +52,7 @@ module Dec_Jmp_Bra(
 
     assign  op_functs =  {opcode, funct3, funct7};
 
-    // opcode_out assignation --> {Jmp[1], I-Type[1], Branch[2], Sign(SLTI, SLT...)[1], Issue select[2], Operation[3]}
+// opcode_out assignation --> {Jmp[1], I-Type[1], Branch[2], Sign(SLTI, SLT...)[1], Issue select[2], Operation[3]}
     assign opcode_out      =    // R - Type
                                 ((op_functs & 17'h1FFFF) == 17'b0110011_000_0000000) ? 10'b0_0_00_0_00_000 :      // ADD +
                                 ((op_functs & 17'h1FFFF) == 17'b0110011_000_0100000) ? 10'b0_0_00_0_00_001 :      // SUB -
@@ -75,8 +75,8 @@ module Dec_Jmp_Bra(
                                 ((op_functs & 17'h1FF80) == 17'b0100011_010_0000000) ? 10'b0_0_00_0_11_001 :      // SW
 
                                 // Branch - Type
-                                ((op_functs & 17'h1FF80) == 17'b1100011_000_0000000) ? 10'b0_0_01_1_00_001 :      // BEQ
-                                ((op_functs & 17'h1FF80) == 17'b1100011_001_0000000) ? 10'b0_0_10_1_00_001 :      // BNE
+                                ((op_functs & 17'h1FF80) == 17'b1100011_000_0000000) ? 10'b0_0_01_1_00_110 :      // BEQ
+                                ((op_functs & 17'h1FF80) == 17'b1100011_001_0000000) ? 10'b0_0_10_1_00_111 :      // BNE
 
                                 // Jump - Type     
                                 ((op_functs & 17'h1FF80) == 17'b1100111_000_0000000) ? 10'b1_0_00_0_00_000 :      // JALR

@@ -4,6 +4,9 @@ module IFQ (
 // Input I-cache
     input   logic   [127:0] icache_rd,
 
+// Input CDB
+    input   logic           cdb_b_taken,
+
 // Input Dispatcher 
     input   logic   [31:0]  disp_jmp_b_addr,
     input   logic           disp_rd_en, disp_jmp_b_va, 
@@ -31,8 +34,8 @@ module IFQ (
 // PC in/out
     Register    #(.RSTVALUE(32'h0040_0000))     PC_in_u     (.clk(clk), .rst(rst), .ena(1'b1), .in(PC_in_16), .out(ifq_pc_in)); 
     Register    #(.RSTVALUE(32'h0040_0000))     PC_out_u    (.clk(clk), .rst(rst), .ena(1'b1), .in(PC_out_4), .out(ifq_pc_out)); 
-    assign PC_in_16     = (disp_jmp_b_va & disp_rd_en) ? disp_jmp_b_addr : ((!full && disp_rd_en)              ? (ifq_pc_in + 5'b1_0000): ifq_pc_in);
-    assign PC_out_4     = (disp_jmp_b_va & disp_rd_en) ? disp_jmp_b_addr : (((!ifq_empty || zeros) && disp_rd_en)  ? (ifq_pc_out + 3'b1_00) : ifq_pc_out);
+    assign PC_in_16     = (disp_jmp_b_va & (disp_rd_en || cdb_b_taken)) ? disp_jmp_b_addr : ((!full && disp_rd_en)              ? (ifq_pc_in + 5'b1_0000): ifq_pc_in);
+    assign PC_out_4     = (disp_jmp_b_va & (disp_rd_en || cdb_b_taken)) ? disp_jmp_b_addr : (((!ifq_empty || zeros) && disp_rd_en)  ? (ifq_pc_out + 3'b1_00) : ifq_pc_out);
 
 // Reg matrix selector
     assign reg_sel = (write_p[3:2] == 2'b00) ? 4'b0001 :
