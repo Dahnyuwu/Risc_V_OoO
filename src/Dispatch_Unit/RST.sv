@@ -17,7 +17,8 @@ module RST(
     logic   [31:0]  w_ena_1;
 
 
-    assign w_ena_1      = (w_data_ena1 && rd_add_in < 32) ? (32'b1 << rd_add_in) : 32'b0;
+    // assign w_ena_1      = (w_data_ena1 && rd_add_in < 32) ? (32'b1 << rd_add_in) : 32'b0;
+    assign w_ena_1      = (w_data_ena1) ? (32'b1 << rd_add_in) : 32'b0;
 
     genvar j;
     generate
@@ -26,7 +27,7 @@ module RST(
         end
     endgenerate
 
-    assign {rs1_tag_va, rs1_tag} =      ((token[00][6]) && (rs1_add == 5'h00)) ? token[00] :
+    assign {rs1_tag_va, rs1_tag} =      ((token[00][6]) && (rs1_add == 5'h00)) ? {1'b1, token[00][5:0]} :
                                         ((token[01][6]) && (rs1_add == 5'h01)) ? token[01] :
                                         ((token[02][6]) && (rs1_add == 5'h02)) ? token[02] :
                                         ((token[03][6]) && (rs1_add == 5'h03)) ? token[03] :
@@ -60,7 +61,7 @@ module RST(
                                         ((token[31][6]) && (rs1_add == 5'h1F)) ? token[31] :
                                         7'h00;
 
-    assign {rs2_tag_va, rs2_tag} =      ((token[00][6]) && (rs2_add == 5'h00)) ? token[00] :
+    assign {rs2_tag_va, rs2_tag} =      ((token[00][6]) && (rs2_add == 5'h00)) ? {1'b1, token[00][5:0]} :
                                         ((token[01][6]) && (rs2_add == 5'h01)) ? token[01] :
                                         ((token[02][6]) && (rs2_add == 5'h02)) ? token[02] :
                                         ((token[03][6]) && (rs2_add == 5'h03)) ? token[03] :

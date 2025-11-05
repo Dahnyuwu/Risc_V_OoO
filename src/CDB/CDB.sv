@@ -13,6 +13,8 @@ module CDB(
                         (opcode == 3'b010) ? a&b :
                         (opcode == 3'b011) ? a|b :
                         (opcode == 3'b100) ? a<b :
+                        (opcode == 3'b101) ? (a-b)>>31 :
+
                         32'b0;
 
     assign  cdb_tag = rd_tag;

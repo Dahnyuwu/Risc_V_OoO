@@ -20,8 +20,6 @@ quietly virtual function -install /Datapath_TB/UUT/IQM/SR1 -env /Datapath_TB/UUT
 quietly virtual function -install /Datapath_TB/UUT/IQM/SR0 -env /Datapath_TB/UUT/IQM/SR0 { &{/Datapath_TB/UUT/IQM/SR0/rs2_va_out, /Datapath_TB/UUT/IQM/SR0/rs2_tag_out }} Rs2_TAG
 quietly virtual function -install /Datapath_TB/UUT/IQM/SR0 -env /Datapath_TB/UUT/IQM/SR0 { (concat_noflatten)&{/Datapath_TB/UUT/IQM/SR0/rs2_va_out, /Datapath_TB/UUT/IQM/SR0/rs2_tag_out }} Rs2_TAG001
 quietly virtual function -install /Datapath_TB/UUT/IQM/SR0 -env /Datapath_TB/UUT/IQM/SR0 { (concat_noflatten)&{/Datapath_TB/UUT/IQM/SR0/rs1_va_out, /Datapath_TB/UUT/IQM/SR0/rs1_tag_out }} Rs1_TAG
-quietly virtual function -install /Datapath_TB/UUT/DU -env /Datapath_TB { &{/Datapath_TB/UUT/DU/disp_valid_int, /Datapath_TB/UUT/DU/disp_valid_mul, /Datapath_TB/UUT/DU/disp_valid_div, /Datapath_TB/UUT/DU/disp_valid_lw_sw }} Selector
-quietly virtual function -install /Datapath_TB/UUT/DU -env /Datapath_TB/UUT/DU { (concat_noflatten)&{/Datapath_TB/UUT/DU/disp_valid_int, /Datapath_TB/UUT/DU/disp_valid_mul, /Datapath_TB/UUT/DU/disp_valid_div, /Datapath_TB/UUT/DU/disp_valid_lw_sw }} valid
 quietly virtual function -install /Datapath_TB/UUT/IQD/SR3 -env /Datapath_TB/UUT/IQD/SR3 { (concat_noflatten)&{/Datapath_TB/UUT/IQD/SR3/rs1_va_out, /Datapath_TB/UUT/IQD/SR3/rs1_tag_out }} Rs1_TAG
 quietly virtual function -install /Datapath_TB/UUT/IQD/SR3 -env /Datapath_TB/UUT/IQD/SR3 { (concat_noflatten)&{/Datapath_TB/UUT/IQD/SR3/rs2_va_out, /Datapath_TB/UUT/IQD/SR3/rs2_tag_out }} Rs2_TAG
 quietly virtual function -install /Datapath_TB/UUT/IQD/SR2 -env /Datapath_TB/UUT/IQD/SR2 { &{/Datapath_TB/UUT/IQD/SR2/rs1_va_out, /Datapath_TB/UUT/IQD/SR2/rs1_tag_out }} Rs1_TAG
@@ -32,6 +30,14 @@ quietly virtual function -install /Datapath_TB/UUT/IQD/SR1 -env /Datapath_TB/UUT
 quietly virtual function -install /Datapath_TB/UUT/IQD/SR1 -env /Datapath_TB/UUT/IQD/SR1 { (concat_noflatten)&{/Datapath_TB/UUT/IQD/SR1/rs2_va_out, /Datapath_TB/UUT/IQD/SR1/rs2_tag_out }} Rs2_TAG001
 quietly virtual function -install /Datapath_TB/UUT/IQD/SR0 -env /Datapath_TB/UUT/IQD/SR0 { (concat_noflatten)&{/Datapath_TB/UUT/IQD/SR0/rs1_va_out, /Datapath_TB/UUT/IQD/SR0/rs1_tag_out }} Rs1_TAG
 quietly virtual function -install /Datapath_TB/UUT/IQD/SR0 -env /Datapath_TB/UUT/IQD/SR0 { (concat_noflatten)&{/Datapath_TB/UUT/IQD/SR0/rs2_va_out, /Datapath_TB/UUT/IQD/SR0/rs2_tag_out }} Rs2_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR3 -env /Datapath_TB/UUT/IQLS/SR3 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR3/rs1_va_out, /Datapath_TB/UUT/IQLS/SR3/rs1_tag_out }} Rs1_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR3 -env /Datapath_TB/UUT/IQLS/SR3 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR3/rs2_va_out, /Datapath_TB/UUT/IQLS/SR3/rs2_tag_out }} Rs2_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR2 -env /Datapath_TB/UUT/IQLS/SR2 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR2/rs1_va_out, /Datapath_TB/UUT/IQLS/SR2/rs1_tag_out }} Rs1_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR2 -env /Datapath_TB/UUT/IQLS/SR2 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR2/rs2_va_out, /Datapath_TB/UUT/IQLS/SR2/rs2_tag_out }} Rs2_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR1 -env /Datapath_TB/UUT/IQLS/SR1 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR1/rs2_va_out, /Datapath_TB/UUT/IQLS/SR1/rs2_tag_out }} Rs2_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR1 -env /Datapath_TB/UUT/IQLS/SR1 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR1/rs1_va_out, /Datapath_TB/UUT/IQLS/SR1/rs1_tag_out }} Rs1_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR0 -env /Datapath_TB/UUT/IQLS/SR0 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR0/rs2_va_out, /Datapath_TB/UUT/IQLS/SR0/rs2_tag_out }} Rs2_TAG
+quietly virtual function -install /Datapath_TB/UUT/IQLS/SR0 -env /Datapath_TB/UUT/IQLS/SR0 { (concat_noflatten)&{/Datapath_TB/UUT/IQLS/SR0/rs1_va_out, /Datapath_TB/UUT/IQLS/SR0/rs1_tag_out }} Rs1_TAG
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -expand -group Control_Signals /Datapath_TB/clk
 add wave -noupdate -expand -group Control_Signals /Datapath_TB/rst
@@ -42,10 +48,10 @@ add wave -noupdate -group Dispatcher -color White /Datapath_TB/UUT/DU/disp_rs1_d
 add wave -noupdate -group Dispatcher -color White /Datapath_TB/UUT/DU/Disp_Rs2_TAG
 add wave -noupdate -group Dispatcher -color White /Datapath_TB/UUT/DU/disp_rs2_data
 add wave -noupdate -group Dispatcher -color Gray75 /Datapath_TB/UUT/DU/disp_rd_tag
-add wave -noupdate -expand -group CDB -color Khaki /Datapath_TB/UUT/cdb_b_taken
-add wave -noupdate -expand -group CDB -color Khaki /Datapath_TB/UUT/cdb_b
-add wave -noupdate -expand -group CDB -color Khaki /Datapath_TB/UUT/CDB_TAG
-add wave -noupdate -expand -group CDB -color Khaki /Datapath_TB/UUT/cdb_data
+add wave -noupdate -group CDB -color Khaki /Datapath_TB/UUT/cdb_b_taken
+add wave -noupdate -group CDB -color Khaki /Datapath_TB/UUT/cdb_b
+add wave -noupdate -group CDB -color Khaki /Datapath_TB/UUT/CDB_TAG
+add wave -noupdate -group CDB -color Khaki /Datapath_TB/UUT/cdb_data
 add wave -noupdate -divider Integer
 add wave -noupdate -group SR3 -color Coral /Datapath_TB/UUT/IQI/SR3/Rs1_TAG
 add wave -noupdate -group SR3 -color Coral /Datapath_TB/UUT/IQI/SR3/rs1_data_out
@@ -78,6 +84,18 @@ add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/Rs2_TAG
 add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/rs2_data_out
 add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/rd_tag_out
 add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/valid_out
+add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/Rs1_TAG
+add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/rs1_data_out
+add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/Rs2_TAG
+add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/rs2_data_out
+add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/rd_tag_out
+add wave -noupdate -group SR3_M /Datapath_TB/UUT/IQM/SR3/valid_out
+add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/Rs1_TAG
+add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/rs1_data_out
+add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/Rs2_TAG
+add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/rs2_data_out
+add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/rd_tag_out
+add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/valid_out
 add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/Rs1_TAG
 add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/rs1_data_out
 add wave -noupdate -group SR2_M /Datapath_TB/UUT/IQM/SR2/Rs2_TAG
@@ -90,6 +108,18 @@ add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/Rs2_TAG
 add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/rs2_data_out
 add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/rd_tag_out
 add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/valid_out
+add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/Rs1_TAG
+add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/rs1_data_out
+add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/Rs2_TAG
+add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/rs2_data_out
+add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/rd_tag_out
+add wave -noupdate -group SR1_M /Datapath_TB/UUT/IQM/SR1/valid_out
+add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/Rs1_TAG
+add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/rs1_data_out
+add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/Rs2_TAG001
+add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/rs2_data_out
+add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/rd_tag_out
+add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/valid_out
 add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/Rs1_TAG
 add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/rs1_data_out
 add wave -noupdate -group SR0_M /Datapath_TB/UUT/IQM/SR0/Rs2_TAG001
@@ -124,6 +154,39 @@ add wave -noupdate -group SR0_D /Datapath_TB/UUT/IQD/SR0/valid_out
 add wave -noupdate -group {Register File} -expand /Datapath_TB/UUT/DU/RF/registerOut
 add wave -noupdate -group RST_Token -childformat {{{/Datapath_TB/UUT/DU/RST_I/token[1]} -radix hexadecimal}} -expand -subitemconfig {{/Datapath_TB/UUT/DU/RST_I/token[1]} {-height 15 -radix hexadecimal}} /Datapath_TB/UUT/DU/RST_I/token
 add wave -noupdate -group TAG_Table -expand /Datapath_TB/UUT/DU/TF/tag_table
+add wave -noupdate -divider LW_SW
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/imm_out
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/addr_out
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/Rs1_TAG
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/rs1_data_out
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/Rs2_TAG
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/rs2_data_out
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/rd_tag_out
+add wave -noupdate -group SR3_LS /Datapath_TB/UUT/IQLS/SR3/valid_out
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/imm_out
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/addr_out
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/Rs1_TAG
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/rs1_data_out
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/Rs2_TAG
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/rs2_data_out
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/rd_tag_out
+add wave -noupdate -group SR2_LS /Datapath_TB/UUT/IQLS/SR2/valid_out
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/imm_out
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/addr_out
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/Rs1_TAG
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/rs1_data_out
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/Rs2_TAG
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/rs2_data_out
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/rd_tag_out
+add wave -noupdate -group SR1_LS /Datapath_TB/UUT/IQLS/SR1/valid_out
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/imm_out
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/addr_out
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/Rs1_TAG
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/rs1_data_out
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/Rs2_TAG
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/rs2_data_out
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/rd_tag_out
+add wave -noupdate -group SR0_LS /Datapath_TB/UUT/IQLS/SR0/valid_out
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {440 ns} 0}
 quietly wave cursor active 1
@@ -141,4 +204,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {483 ns}
+WaveRestoreZoom {0 ns} {242 ns}

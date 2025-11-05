@@ -22,7 +22,7 @@ module Dispatch_Unit(
     output  logic   [5:0]   disp_rd_tag, disp_rs1_tag, disp_rs2_tag, 
     output  logic   [2:0]   disp_opcode,
     output  logic   [1:0]   disp_branch,
-    output  logic           disp_rs1_tag_va, disp_rs2_tag_va, disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_lw_sw
+    output  logic           disp_rs1_tag_va, disp_rs2_tag_va, disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_ls
 );
 
 // Internal variables
@@ -37,21 +37,21 @@ module Dispatch_Unit(
     assign  disp_jmp_b_addr = ~cdb_b ? jmp_add_ : cdb_data;
     assign  disp_rd_tag     = tag_out_;
     assign  disp_rs1_tag_va = (cdb_va && disp_rs1_tag == cdb_tag) ? 1'b1: (~rs1_tag_va_);
-    assign  disp_rs1_data   = (~rs1_tag_va_) ? rs1_data_ : cdb_data;
+    assign  disp_rs1_data   = ~|rs1_add_ ? 32'b0 : ((~rs1_tag_va_) ? rs1_data_ : cdb_data);
     assign  disp_opcode     = (|opcode_[7:6]) ? 3'b001 : opcode_[2:0];
 
     // assign  disp_rs2_tag_va = (~rs2_tag_va_);
         assign  disp_rs2_tag_va = (cdb_va && disp_rs2_tag == cdb_tag) ? 1'b1 : (opcode_[8] ? 1'b1 : (~rs2_tag_va_));
 
     // assign  disp_rs2_data   = (~rs2_tag_va_) ? rs2_data_ : cdb_data; 
-        assign  disp_rs2_data   = opcode_[8] ? disp_imm : ((~rs2_tag_va_) ? rs2_data_ : cdb_data); 
+        assign  disp_rs2_data   = opcode_[8] ? disp_imm : ~|rs1_add_ ? 32'b0 : (((~rs2_tag_va_) ? rs2_data_ : cdb_data)); 
 
         assign  branch_ena_     = (|opcode_[7:6]);
         assign  inst_           = disp_rd_en ? ifq_inst : 32'b0;
         assign  disp_branch     = opcode_[7:6];
 
     // Issue queue selector
-        assign  {disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_lw_sw} = (disp_rd_en && {opcode_[9], opcode_[4:3]} == 3'b0_00)                    ?   4'b1000 :       // Int queue
+        assign  {disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_ls}    = (disp_rd_en && {opcode_[9], opcode_[4:3]} == 3'b0_00)                    ?   4'b1000 :       // Int queue
                                                                                      (disp_rd_en && {opcode_[9], opcode_[7:6], opcode_[4:3]} == 5'b0_00_01)   ?   4'b0100 :       // Mul queue
                                                                                      (disp_rd_en && {opcode_[9], opcode_[7:6], opcode_[4:3]} == 5'b0_00_10)   ?   4'b0010 :       // Div queue
                                                                                      (disp_rd_en && {opcode_[9], opcode_[7:6], opcode_[4:3]} == 5'b0_00_11)   ?   4'b0001 :       // SW-LW queue
