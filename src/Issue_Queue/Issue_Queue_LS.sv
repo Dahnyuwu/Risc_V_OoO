@@ -12,11 +12,14 @@ module Issue_Queue_LS(
     input   logic   [5:0]   cdb_tag,
     input   logic           cdb_va,
 
+// Input Issue unit
+    input   logic           i_unit_take,
+
 // Output to Dispatcher
     output  logic           issue_full,
 
 // Output to CDB
-    output  logic   [31:0]  issue_a, issue_b, issue_addr,
+    output  logic   [31:0]  issue_rs1, issue_rs2, issue_addr,
     output  logic   [5:0]   issue_rd_tag,
     output  logic           issue_opcode,
     output  logic           issue_va
@@ -78,10 +81,10 @@ module Issue_Queue_LS(
     assign  rs0_ready_ = (rs1_va_out0_ && rs2_va_out0_ && valid_out0_) ? 1'b1 : 1'b0;
 
 // Full detector
-    assign  issue_full = (valid_out3_ & valid_out2_ & valid_out1_ & valid_out0_);        // Falta agregar lo de done xd
+    assign  issue_full = (valid_out3_ & valid_out2_ & valid_out1_ & valid_out0_ & ~i_unit_take);        // Falta agregar lo de done xd
 
 //  RS data selector
-    assign  {issue_opcode, issue_rd_tag, issue_a, issue_b, issue_addr, issue_va} =  (rs0_ready_)    ? {opcode_out0_, rd_tag_out0_, rs1_data_out0_, rs2_data_out0_, addr_out0_, rs0_ready_} :
+    assign  {issue_opcode, issue_rd_tag, issue_rs1, issue_rs2, issue_addr, issue_va} =  (rs0_ready_)    ? {opcode_out0_, rd_tag_out0_, rs1_data_out0_, rs2_data_out0_, addr_out0_, rs0_ready_} :
                                                                                     (rs1_ready_)    ? {opcode_out1_, rd_tag_out1_, rs1_data_out1_, rs2_data_out1_, addr_out1_, rs1_ready_} :
                                                                                     (rs2_ready_)    ? {opcode_out2_, rd_tag_out2_, rs1_data_out2_, rs2_data_out2_, addr_out2_, rs2_ready_} :
                                                                                     (rs3_ready_)    ? {opcode_out3_, rd_tag_out3_, rs1_data_out3_, rs2_data_out3_, addr_out3_, rs3_ready_} :
@@ -188,7 +191,7 @@ module Issue_Queue_LS(
     Shift_Register_LW  SR3 (
     // Inputs
         .clk(clk), .rst(rst), .arst(rst && rst3_),
-        .s_ena(s_ena3_), .u_ena(u_ena3_), .imm_in(disp_imm), .addr_in(addr_in3_), .opcode_in(disp_opcode), .rd_tag_in(disp_rd_tag), .rs1_tag_in(disp_rs1_tag), .rs1_data_in(rs1_data_in3_), .rs1_va_in(rs1_va_in3_), .rs2_tag_in(disp_rs2_tag), .rs2_data_in(rs2_data_in3_), .rs2_va_in(rs2_va_in3_), .valid_in(disp_valid),
+        .s_ena(s_ena3_ & (cdb_va || disp_valid)), .u_ena(u_ena3_ && (cdb_va || disp_valid)), .imm_in(disp_imm), .addr_in(addr_in3_), .opcode_in(disp_opcode), .rd_tag_in(disp_rd_tag), .rs1_tag_in(disp_rs1_tag), .rs1_data_in(rs1_data_in3_), .rs1_va_in(rs1_va_in3_), .rs2_tag_in(disp_rs2_tag), .rs2_data_in(rs2_data_in3_), .rs2_va_in(rs2_va_in3_), .valid_in(disp_valid),
     // Outputs
        .imm_out(imm_out3_), .addr_out(addr_out3_), .opcode_out(opcode_out3_), .rd_tag_out(rd_tag_out3_), .rs1_tag_out(rs1_tag_out3_), .rs1_data_out(rs1_data_out3_), .rs1_va_out(rs1_va_out3_), .rs2_tag_out(rs2_tag_out3_), .rs2_data_out(rs2_data_out3_), .rs2_va_out(rs2_va_out3_), .valid_out(valid_out3_)
     );

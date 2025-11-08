@@ -12,11 +12,14 @@ module Issue_Queue(
     input   logic   [5:0]   cdb_tag,
     input   logic           cdb_va,
 
+// Input Issue unit
+    input   logic           i_unit_take,
+
 // Output to Dispatcher
     output  logic           issue_full,
 
-// Output to CDB
-    output  logic   [31:0]  issue_a, issue_b,
+// Output to Issue unit
+    output  logic   [31:0]  issue_rs1, issue_rs2,
     output  logic   [5:0]   issue_rd_tag,
     output  logic   [2:0]   issue_opcode,
     output  logic           issue_va
@@ -71,10 +74,10 @@ module Issue_Queue(
     assign  rs0_ready_ = (rs1_va_out0_ && rs2_va_out0_ && valid_out0_) ? 1'b1 : 1'b0;
 
 // Full detector
-    assign  issue_full = (valid_out3_ & valid_out2_ & valid_out1_ & valid_out0_);        // Falta agregar lo de done xd
+    assign  issue_full = (valid_out3_ & valid_out2_ & valid_out1_ & valid_out0_ & ~i_unit_take);        // Falta agregar lo de done xd
 
 //  RS data selector
-    assign  {issue_opcode, issue_rd_tag, issue_a, issue_b, issue_va} =      (rs0_ready_) ? {opcode_out0_, rd_tag_out0_, rs1_data_out0_, rs2_data_out0_, rs0_ready_} :
+    assign  {issue_opcode, issue_rd_tag, issue_rs1, issue_rs2, issue_va} =  (rs0_ready_) ? {opcode_out0_, rd_tag_out0_, rs1_data_out0_, rs2_data_out0_, rs0_ready_} :
                                                                             (rs1_ready_) ? {opcode_out1_, rd_tag_out1_, rs1_data_out1_, rs2_data_out1_, rs1_ready_} :
                                                                             (rs2_ready_) ? {opcode_out2_, rd_tag_out2_, rs1_data_out2_, rs2_data_out2_, rs2_ready_} :
                                                                             (rs3_ready_) ? {opcode_out3_, rd_tag_out3_, rs1_data_out3_, rs2_data_out3_, rs3_ready_} :
@@ -165,10 +168,10 @@ module Issue_Queue(
                                                                                                                                                                                                                                                                                                              {dONTCARE_[0], dONTCARE_, dONTCARE_[0], dONTCARE_, 2'b00})): 68'b0;
 
 // Clear completed queues
-    assign  rst3_ = (cdb_va && (cdb_tag == rd_tag_out3_) && valid_out3_ && rs1_va_out3_ && rs2_va_out3_ && ~disp_valid) ? 1'b0: 1'b1;
-    assign  rst2_ = ((cdb_va && (cdb_tag == rd_tag_out2_) && valid_out2_ && rs1_va_out2_ && rs2_va_out2_ && ~disp_valid) || (cdb_va && (cdb_tag == rd_tag_out3_) && valid_out3_ && rs1_va_out3_ && rs2_va_out3_ && disp_valid)) ? 1'b0: 1'b1;
-    assign  rst1_ = ((cdb_va && (cdb_tag == rd_tag_out1_) && valid_out1_ && rs1_va_out1_ && rs2_va_out1_ && ~disp_valid) ||(cdb_va && (cdb_tag == rd_tag_out2_) && valid_out2_ && rs1_va_out2_ && rs2_va_out2_ && ~disp_valid)) ? 1'b0: 1'b1;
-    assign  rst0_ = ((cdb_va && (cdb_tag == rd_tag_out0_) && valid_out0_ && rs1_va_out0_ && rs2_va_out0_ && ~disp_valid) || (cdb_va && (cdb_tag == rd_tag_out1_) && valid_out1_ && rs1_va_out1_ && rs2_va_out1_ && ~disp_valid)) ? 1'b0: 1'b1;
+    assign  rst3_ = (i_unit_take && valid_out3_ && rs1_va_out3_ && rs2_va_out3_ && ~disp_valid) ? 1'b0: 1'b1;
+    assign  rst2_ = (i_unit_take && valid_out2_ && rs1_va_out2_ && rs2_va_out2_ && ~disp_valid) ||  rst3_ ? 1'b0: 1'b1;
+    assign  rst1_ = (i_unit_take && valid_out1_ && rs1_va_out1_ && rs2_va_out1_ && ~disp_valid) ||  rst2_  ? 1'b0: 1'b1;
+    assign  rst0_ = (i_unit_take && valid_out0_ && rs1_va_out0_ && rs2_va_out0_ && ~disp_valid) ||  rst1_  ? 1'b0: 1'b1;
 
 assign rst_wflush = rst & ~disp_jmp_b_va;
 
@@ -176,7 +179,7 @@ assign rst_wflush = rst & ~disp_jmp_b_va;
     Shift_Register  SR3 (
     // Inputs
         .clk(clk), .rst(rst_wflush), .arst(rst && rst3_),
-        .s_ena(s_ena3_), .u_ena(u_ena3_), .opcode_in(disp_opcode), .rd_tag_in(disp_rd_tag), .rs1_tag_in(disp_rs1_tag), .rs1_data_in(rs1_data_in3_), .rs1_va_in(rs1_va_in3_), .rs2_tag_in(disp_rs2_tag), .rs2_data_in(rs2_data_in3_), .rs2_va_in(rs2_va_in3_), .valid_in(disp_valid),
+        .s_ena(s_ena3_ & (disp_valid | cdb_va)), .u_ena(u_ena3_ & (disp_valid | cdb_va)), .opcode_in(disp_opcode), .rd_tag_in(disp_rd_tag), .rs1_tag_in(disp_rs1_tag), .rs1_data_in(rs1_data_in3_), .rs1_va_in(rs1_va_in3_), .rs2_tag_in(disp_rs2_tag), .rs2_data_in(rs2_data_in3_), .rs2_va_in(rs2_va_in3_), .valid_in(disp_valid),
     // Outputs
         .opcode_out(opcode_out3_), .rd_tag_out(rd_tag_out3_), .rs1_tag_out(rs1_tag_out3_), .rs1_data_out(rs1_data_out3_), .rs1_va_out(rs1_va_out3_), .rs2_tag_out(rs2_tag_out3_), .rs2_data_out(rs2_data_out3_), .rs2_va_out(rs2_va_out3_), .valid_out(valid_out3_)
     );

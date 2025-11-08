@@ -50,6 +50,15 @@ module Register_File(
                     .out(registerOut[i])
                 );
             end
+            else if (i == 3) begin
+                Register #(.RSTVALUE(32'h1000_8000)) RegisterSP(
+                    .clk(clk),
+                    .rst(rst),
+                    .in(rd_data),
+                    .ena(WEROut[i]),
+                    .out(registerOut[i])
+                );
+            end
             else begin
                 // Standard registers
                 Register Register_file(

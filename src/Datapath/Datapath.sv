@@ -21,25 +21,27 @@ module Datapath(
     logic   [1:0]   disp_branch;
     logic           disp_jmp_b_va, disp_rs1_tag_va, disp_rs2_tag_va, disp_valid_int, disp_valid_mul, disp_valid_div, disp_valid_lw_sw;
     // Internal Issue int
-    logic   [31:0]  issue_a_int, issue_b_int;
+    logic   [31:0]  issue_rs1_int, issue_rs2_int;
     logic   [5:0]   issue_rd_tag_int;
     logic   [2:0]   issue_opcode_int;
     logic           issue_full_int, issue_va_int;
     // Internal Issue mul
-    logic   [31:0]  issue_a_mul, issue_b_mul;
+    logic   [31:0]  issue_rs1_mul, issue_rs2_mul;
     logic   [5:0]   issue_rd_tag_mul;
     logic   [2:0]   issue_opcode_mul;
     logic           issue_full_mul, issue_va_mul;
     // Internal Issue div
-    logic   [31:0]  issue_a_div, issue_b_div;
+    logic   [31:0]  issue_rs1_div, issue_rs2_div;
     logic   [5:0]   issue_rd_tag_div;
     logic   [2:0]   issue_opcode_div;
     logic           issue_full_div, issue_va_div;
     // Internal Issue LS
-    logic   [31:0]  issue_a_ls, issue_b_ls, issue_addr;
+    logic   [31:0]  issue_rs1_ls, issue_rs2_ls, issue_addr;
     logic   [5:0]   issue_rd_tag_ls;
     logic           issue_opcode_ls;
     logic           issue_full_ls, issue_va_ls;
+    // Internal Issue unit
+    logic           i_unit_take_int, i_unit_take_mul, i_unit_take_div, i_unit_take_ls; 
     
 
 // Valores temporales
@@ -95,16 +97,15 @@ module Datapath(
     //     // Output to Dispatcher
     //         .issue_full(issue_full),
     //     // Output to CDB?
-    //         .issue_a(issue_a), .issue_b(issue_b), .issue_rd_tag(issue_rd_tag), .issue_opcode(issue_opcode)
+    //         .issue_rs1(issue_a), .issue_rs2(issue_b), .issue_rd_tag(issue_rd_tag), .issue_opcode(issue_opcode)
     // );
 
-    Issue_Queue     IQI (.disp_valid(disp_valid_int), .issue_full(issue_full_int), .issue_a(issue_a_int), .issue_b(issue_b_int), .issue_rd_tag(issue_rd_tag_int), .issue_opcode(issue_opcode_int), .issue_va(issue_va_int), .*);
-    Issue_Queue     IQM (.disp_valid(disp_valid_mul), .disp_opcode({2'b0, disp_opcode[0]}), .issue_full(issue_full_mul), .issue_a(issue_a_mul), .issue_b(issue_b_mul), .issue_rd_tag(issue_rd_tag_mul), .issue_opcode(issue_opcode_mul), .issue_va(issue_va_mul), .*);
-    Issue_Queue     IQD (.disp_valid(disp_valid_div), .disp_opcode({2'b0, disp_opcode[0]}), .issue_full(issue_full_div), .issue_a(issue_a_div), .issue_b(issue_b_div), .issue_rd_tag(issue_rd_tag_div), .issue_opcode(issue_opcode_div), .issue_va(issue_va_div), .*);
-    Issue_Queue_LS  IQLS(.disp_valid(disp_valid_ls), .disp_opcode(disp_opcode[0]), .issue_full(issue_full_ls), .issue_a(issue_a_ls), .issue_b(issue_b_ls), .issue_rd_tag(issue_rd_tag_ls), .issue_opcode(issue_opcode_ls), .issue_va(issue_va_ls), .*);
+    Issue_Queue     IQI (.disp_valid(disp_valid_int),                               .issue_full(issue_full_int),    .issue_rs1(issue_rs1_int),  .issue_rs2(issue_rs2_int),  .issue_rd_tag(issue_rd_tag_int),    .issue_opcode(issue_opcode_int), .issue_va(issue_va_int),   .i_unit_take(i_unit_take_int), .*);
+    Issue_Queue     IQM (.disp_valid(disp_valid_mul), .disp_opcode(3'b0),           .issue_full(issue_full_mul),    .issue_rs1(issue_rs1_mul),  .issue_rs2(issue_rs2_mul),  .issue_rd_tag(issue_rd_tag_mul),    .issue_opcode(issue_opcode_mul), .issue_va(issue_va_mul),   .i_unit_take(i_unit_take_mul), .*);
+    Issue_Queue     IQD (.disp_valid(disp_valid_div), .disp_opcode(3'b0),           .issue_full(issue_full_div),    .issue_rs1(issue_rs1_div),  .issue_rs2(issue_rs2_div),  .issue_rd_tag(issue_rd_tag_div),    .issue_opcode(issue_opcode_div), .issue_va(issue_va_div),   .i_unit_take(i_unit_take_div), .*);
+    Issue_Queue_LS  IQLS(.disp_valid(disp_valid_ls),  .disp_opcode(disp_opcode[0]), .issue_full(issue_full_ls),     .issue_rs1(issue_rs1_ls),   .issue_rs2(issue_rs2_ls),   .issue_rd_tag(issue_rd_tag_ls),     .issue_opcode(issue_opcode_ls),  .issue_va(issue_va_ls),    .i_unit_take(i_unit_take_ls), .*);
 
-
-    CDB         CDB(.a(issue_a_int), .b(issue_b_int), .va(issue_va_int), .opcode(issue_opcode_int), .rd_tag(issue_rd_tag_int), .*);
+    Issue_Unit      ISU (.*);
 
 
 
