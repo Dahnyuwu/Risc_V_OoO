@@ -42,14 +42,14 @@ module Issue_Unit(
     logic   [5:0]   i_unit_take_div_out_;
     logic   [3:0]   mux_sel;
     logic   [2:0]   i_unit_take_mul_out_;
-    logic           int_cdb_b_taken_, int_cdb_b_;
+    logic           int_cdb_b_taken_, int_cdb_b_, iol_out_;
 
      
 // CDB Slot 
-    assign i_unit_take_int = ~cdb_slot_out_[1] & issue_va_int       ? 1'b1 : 1'b0;
-    assign i_unit_take_mul = ~cdb_slot_out_[4] & issue_va_mul       ? 1'b1 : 1'b0;
-    assign i_unit_take_div = ~|i_unit_take_div_out_ & issue_va_div  ? 1'b1 : 1'b0;
-    // assign i_unit_take_ls  = ~cdb_slot_out_[1] & & issue_va_ls  ? 1'b1 : 1'b0;
+    assign i_unit_take_int = ~cdb_slot_out_[1] & issue_va_int & (~iol_out_ | ~i_unit_take_ls)       ? 1'b1 : 1'b0;
+    assign i_unit_take_mul = ~cdb_slot_out_[4] & issue_va_mul                                       ? 1'b1 : 1'b0;
+    assign i_unit_take_div = ~|i_unit_take_div_out_ & issue_va_div                                  ? 1'b1 : 1'b0;
+    assign i_unit_take_ls  = ~cdb_slot_out_[1] & issue_va_ls & (iol_out_ | ~i_unit_take_int)        ? 1'b1 : 1'b0;
 
     assign cdb_slot_in_[0]      = cdb_slot_out_[1] | i_unit_take_int;
     assign cdb_slot_in_[2:1]    = cdb_slot_out_[3:2];
@@ -58,11 +58,10 @@ module Issue_Unit(
     assign cdb_slot_in_[6]      = i_unit_take_div;
 
     Register #(.LENGTH(7)) CDB_S(.clk(clk), .rst(rst), .ena(1'b1), .in(cdb_slot_in_), .out(cdb_slot_out_));
+    Register #(.LENGTH(1))   IOL(.clk(clk), .rst(rst), .ena(i_unit_take_int | i_unit_take_ls), .in(~iol_out_), .out(iol_out_));     // Prioridad a int o lw
 
 // Mux selector
-    // assign  mux_sel = {i_unit_take_int, i_unit_take_mul_out_[0],i_unit_take_div_out_[0], i_unit_take_ls};
-    assign  mux_sel = {i_unit_take_int, i_unit_take_mul_out_[0], i_unit_take_div_out_[0], 1'b0};
-
+    assign  mux_sel = {i_unit_take_int, i_unit_take_mul_out_[0],i_unit_take_div_out_[0], i_unit_take_ls};
 
 // Multiplication pipe
     Register #(.LENGTH(3)) MP (.clk(clk), .rst(rst), .ena(1'b1), .in({i_unit_take_mul, i_unit_take_mul_out_[2:1]}), .out(i_unit_take_mul_out_)); 
@@ -95,7 +94,6 @@ module Issue_Unit(
     Register  #(.LENGTH(6)) MPT1(.clk(clk), .rst(rst), .ena(1'b1), .in(mul_tag_out0_), .out(mul_tag_out1_));
     Register  #(.LENGTH(6)) MPT2(.clk(clk), .rst(rst), .ena(1'b1), .in(mul_tag_out1_), .out(mul_tag_out2_));
 
-
 // Division issue & pies
     assign  div_data_in0_   = (|issue_rs2_div) ? (issue_rs1_div / issue_rs2_div) : 32'hFFFF_FFFF;
 
@@ -113,15 +111,20 @@ module Issue_Unit(
     Register  #(.LENGTH(6)) DPT4(.clk(clk), .rst(rst), .ena(1'b1), .in(div_tag_out3_), .out(div_tag_out4_));
     Register  #(.LENGTH(6)) DPT5(.clk(clk), .rst(rst), .ena(1'b1), .in(div_tag_out4_), .out(div_tag_out5_));
 
+// Load & Store issue
+    Memory_Manager  MM (.clk(clk), .rst(rst), .addr(issue_addr), .wd(issue_rs2_ls), .we(issue_opcode_ls), .rd(ls_cdb_data_));
+
 // CDB Selector
     assign  cdb_data =  (mux_sel == 4'b1000) ? int_cdb_data_ :
                         (mux_sel == 4'b0100) ? mul_cdb_data_ :
                         (mux_sel == 4'b0010) ? div_cdb_data_ :
+                        (mux_sel == 4'b0001) ? ls_cdb_data_  :
                         32'b0;
     
     assign  cdb_tag =   (mux_sel == 4'b1000) ? issue_rd_tag_int :
                         (mux_sel == 4'b0100) ? mul_tag_out2_ :
                         (mux_sel == 4'b0010) ? div_tag_out5_ :
+                        (mux_sel == 4'b0001) ? issue_rd_tag_ls :
                         6'b0;
 
     assign  cdb_va =    (|mux_sel) ? 1'b1 : 1'b0;

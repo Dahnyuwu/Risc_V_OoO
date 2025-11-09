@@ -1,7 +1,17 @@
+# Compile of Issue_Unit.sv failed with 1 errors.
+# Compile of Memory_Manager.sv failed with 2 errors.
+# Compile of upperRAM.sv was successful.
+# 3 compiles, 2 failed with 3 errors.
+# Compile of Issue_Unit.sv was successful.
+# Compile of Memory_Manager.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Memory_Manager.sv was successful.
 vsim -voptargs=+acc work.Datapath_TB
 # vsim -voptargs="+acc" work.Datapath_TB 
-# Start time: 16:44:47 on Nov 06,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Start time: 20:39:59 on Nov 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
@@ -92,40 +102,18 @@ vsim -voptargs=+acc work.Datapath_TB
 # Loading work.Shift_Register_LW(fast)
 # Loading work.Issue_Unit(fast)
 # Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 do wave_datapath.do
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jdhuerta  Hostname: IDANNY-LAP  ProcessID: 14856
-#           Attempting to use alternate WLF file "./wlftac9s18".
+#           Attempting to use alternate WLF file "./wlftmezfd0".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftac9s18
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-run
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQM/disp_valid \
-sim:/Datapath_TB/UUT/IQM/cdb_va
+#           Using alternate file: ./wlftmezfd0
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -215,35 +203,23 @@ restart
 # Loading work.Shift_Register_LW(fast)
 # Loading work.Issue_Unit(fast)
 # Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-run
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
+#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQM/SR3/rs1_data_out \
-sim:/Datapath_TB/UUT/IQM/SR3/rs2_data_out \
-sim:/Datapath_TB/UUT/IQM/SR3/rs1_va_out \
-sim:/Datapath_TB/UUT/IQM/SR3/rs2_va_out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQM/SR3/rs1_va_in \
-sim:/Datapath_TB/UUT/IQM/SR3/rs2_va_in
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
 # Loading work.I_Cache(fast)
@@ -333,22 +309,17 @@ restart
 # Loading work.Shift_Register_LW(fast)
 # Loading work.Issue_Unit(fast)
 # Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-run
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
+#    Time: 280 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-# Compile of Issue_Queue.sv was successful.
+#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# Compile of upperRAM.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -444,250 +415,34 @@ restart
 # Loading work.Shift_Register_LW(fast)
 # Loading work.Issue_Unit(fast)
 # Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-run
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
+#    Time: 280 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
+#    Time: 440 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 run
 run
 run
 run
 run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/DU/disp_valid_int \
-sim:/Datapath_TB/UUT/DU/disp_valid_mul \
-sim:/Datapath_TB/UUT/DU/disp_valid_div \
-sim:/Datapath_TB/UUT/DU/disp_valid_ls
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
 run
 run
 run
 run
 run
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
 run
 run
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 101
-run
-run
-run
-run
-# Compile of Issue_Unit.sv failed with 6 errors.
-# Compile of Issue_Unit.sv was successful.
+# Compile of Memory_Manager.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -783,23 +538,350 @@ restart
 # Loading work.Shift_Register_LW(fast)
 # Loading work.Issue_Unit(fast)
 # Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
+#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
+#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/IQLS/SR3/opcode_out
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Register(fast__4)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.Register(fast__68)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# Loading work.Issue_Queue(fast)
+# Loading work.Shift_Register(fast)
+# Loading work.Register(fast__69)
+# Loading work.Register(fast__70)
+# Loading work.Register(fast__71)
+# Loading work.Issue_Queue_LS(fast)
+# Loading work.Shift_Register_LW(fast)
+# Loading work.Issue_Unit(fast)
+# Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/ISU/MM/clk \
+sim:/Datapath_TB/UUT/ISU/MM/rst \
+sim:/Datapath_TB/UUT/ISU/MM/addr \
+sim:/Datapath_TB/UUT/ISU/MM/wd \
+sim:/Datapath_TB/UUT/ISU/MM/we \
+sim:/Datapath_TB/UUT/ISU/MM/rd \
+sim:/Datapath_TB/UUT/ISU/MM/ram_ \
+sim:/Datapath_TB/UUT/ISU/MM/upperRAM
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Register(fast__4)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.Register(fast__68)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# Loading work.Issue_Queue(fast)
+# Loading work.Shift_Register(fast)
+# Loading work.Register(fast__69)
+# Loading work.Register(fast__70)
+# Loading work.Register(fast__71)
+# Loading work.Issue_Queue_LS(fast)
+# Loading work.Shift_Register_LW(fast)
+# Loading work.Issue_Unit(fast)
+# Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+add wave -position insertpoint  \
+sim:/Datapath_TB/UUT/ISU/MM/I1/wd \
+sim:/Datapath_TB/UUT/ISU/MM/I1/addr \
+sim:/Datapath_TB/UUT/ISU/MM/I1/we \
+sim:/Datapath_TB/UUT/ISU/MM/I1/rd
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Register(fast__4)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.Register(fast__68)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# Loading work.Issue_Queue(fast)
+# Loading work.Shift_Register(fast)
+# Loading work.Register(fast__69)
+# Loading work.Register(fast__70)
+# Loading work.Register(fast__71)
+# Loading work.Issue_Queue_LS(fast)
+# Loading work.Shift_Register_LW(fast)
+# Loading work.Issue_Unit(fast)
+# Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-run
-run
-run
-# Compile of Issue_Unit.sv was successful.
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+# Compile of Issue_Queue_LS.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -895,1876 +977,17 @@ restart
 # Loading work.Shift_Register_LW(fast)
 # Loading work.Issue_Unit(fast)
 # Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/cdb_slot_out_ \
-sim:/Datapath_TB/UUT/ISU/cdb_slot_in_
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
+#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
+#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
+#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/MP/in \
-sim:/Datapath_TB/UUT/ISU/MP/out
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DP/in \
-sim:/Datapath_TB/UUT/ISU/DP/out
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-# Compile of Issue_Unit.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/div_data_in0_
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/div_data_out0_ \
-sim:/Datapath_TB/UUT/ISU/div_data_out1_ \
-sim:/Datapath_TB/UUT/ISU/div_data_out2_ \
-sim:/Datapath_TB/UUT/ISU/div_data_out3_ \
-sim:/Datapath_TB/UUT/ISU/div_data_out4_
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/div_cdb_data_
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/i_unit_take_div
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/issue_rs2_div
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# Compile of Issue_Unit.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD0/in
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD0/out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD1/out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD2/out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD3/out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD4/out
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/DPD5/out
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-run
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQD/SR3/rs1_data_in
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQD/s_ena3_ \
-sim:/Datapath_TB/UUT/IQD/u_ena3_
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQD/disp_valid
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQD/cdb_va
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#100 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 100
 run

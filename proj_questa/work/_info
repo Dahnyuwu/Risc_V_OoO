@@ -204,6 +204,10 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
 !s11f vlog 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
@@ -252,13 +256,13 @@ n@_opt2
 R7
 R1
 T_opt3
-!s110 1762474089
-V0WzR__7nm2NALTLb;6^K71
+!s110 1762657442
+VX2SQ8g:PZ]Uf8aW=;ij0:3
 R2
-=17-c85acf71c477-690d3868-3a4-920
+=9-44e517c92f75-691004a2-53-4614
 R0
 R3
-!s124 OEM10U339 
+!s124 OEM10U342 
 R5
 R6
 n@_opt3
@@ -565,23 +569,23 @@ R6
 n@issue_@queue
 vIssue_Queue_LS
 R8
-!s110 1762468084
+!s110 1762657428
 !i10b 1
-!s100 blLX_]48^01G:_LVYIhQi1
-I`59lDhc>JZ=9RnN:O83JK0
+!s100 B>bnj_ei4P3ea>V_TeOPK0
+IN95_NfmmiP?;9W?0cXe_41
 S1
 R10
-w1762468079
+w1762657424
 8C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Issue_Queue_LS.sv
 FC:/Quartus_Arqui/Dispatch/src/Issue_Queue/Issue_Queue_LS.sv
-!i122 332
-L0 1 225
+!i122 343
+L0 1 224
 R14
 R15
 r1
 !s85 0
 31
-!s108 1762468084.000000
+!s108 1762657428.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Issue_Queue_LS.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Issue_Queue/Issue_Queue_LS.sv|
 !i113 0
@@ -615,29 +619,54 @@ R6
 n@issue_@queue_@t@b
 vIssue_Unit
 R8
-!s110 1762474060
+!s110 1762655948
 !i10b 1
-!s100 IM407Nm3fZKS9?`gGS5OC3
-IXiCOGenEGJ@]AYoBgKR8_2
+!s100 k?Y1Y@8GjkLD<b>f=m8zA1
+I:3NbaD0E:zW@HFD4lj:eN2
 S1
 R10
-w1762474056
+w1762655916
 8C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv
 FC:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv
-!i122 337
-L0 1 132
+!i122 339
+L0 1 135
 R14
 R15
 r1
 !s85 0
 31
-!s108 1762474060.000000
+!s108 1762655948.000000
 !s107 C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv|
 !i113 0
 R19
 R6
 n@issue_@unit
+vMemory_Manager
+R8
+!s110 1762656989
+!i10b 1
+!s100 =8g3mRZRIQ:407UTRik@D3
+I<JQG2d<j=f?jA=[T5601C2
+S1
+R10
+w1762656884
+8C:/Quartus_Arqui/Dispatch/src/Mix/Memory_Manager.sv
+FC:/Quartus_Arqui/Dispatch/src/Mix/Memory_Manager.sv
+!i122 342
+L0 14 22
+R14
+R15
+r1
+!s85 0
+31
+!s108 1762656988.000000
+!s107 C:/Quartus_Arqui/Dispatch/src/Mix/Memory_Manager.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Mix/Memory_Manager.sv|
+!i113 0
+R19
+R6
+n@memory_@manager
 vRegister
 R8
 R9
@@ -811,3 +840,28 @@ r1
 R19
 R6
 n@t@a@g_@f@i@f@o
+vupperRAM
+R8
+!s110 1762656608
+!i10b 1
+!s100 ^BR?mFSd<FZb2XbU:1SSM2
+IZGYdRN^3N:I:]aS2a:e]i1
+S1
+R10
+w1762656539
+8C:/Quartus_Arqui/Dispatch/src/Mix/upperRAM.sv
+FC:/Quartus_Arqui/Dispatch/src/Mix/upperRAM.sv
+!i122 341
+L0 1 23
+R14
+R15
+r1
+!s85 0
+31
+!s108 1762656608.000000
+!s107 C:/Quartus_Arqui/Dispatch/src/Mix/upperRAM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Quartus_Arqui/Dispatch/src/Mix/upperRAM.sv|
+!i113 0
+R19
+R6
+nupper@r@a@m

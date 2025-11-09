@@ -176,11 +176,10 @@ module Issue_Queue_LS(
                                                                                                                                                                                                                                                                                                              {dONTCARE_[0], dONTCARE_, dONTCARE_[0], dONTCARE_, 2'b00})): 68'b0;
 
 // Clear completed queues
-    assign  rst3_ = (cdb_va && (cdb_tag == rd_tag_out3_) && valid_out3_ && rs1_va_out3_ && rs2_va_out3_ && ~disp_valid) ? 1'b0: 1'b1;
-    assign  rst2_ = ((cdb_va && (cdb_tag == rd_tag_out2_) && valid_out2_ && rs1_va_out2_ && rs2_va_out2_ && ~disp_valid) || (cdb_va && (cdb_tag == rd_tag_out3_) && valid_out3_ && rs1_va_out3_ && rs2_va_out3_ && disp_valid)) ? 1'b0: 1'b1;
-    assign  rst1_ = ((cdb_va && (cdb_tag == rd_tag_out1_) && valid_out1_ && rs1_va_out1_ && rs2_va_out1_ && ~disp_valid) ||(cdb_va && (cdb_tag == rd_tag_out2_) && valid_out2_ && rs1_va_out2_ && rs2_va_out2_ && ~disp_valid)) ? 1'b0: 1'b1;
-    assign  rst0_ = ((cdb_va && (cdb_tag == rd_tag_out0_) && valid_out0_ && rs1_va_out0_ && rs2_va_out0_ && ~disp_valid) || (cdb_va && (cdb_tag == rd_tag_out1_) && valid_out1_ && rs1_va_out1_ && rs2_va_out1_ && ~disp_valid)) ? 1'b0: 1'b1;
-
+    assign  rst3_ = (i_unit_take && valid_out3_ && rs1_va_out3_ && rs2_va_out3_ && ~disp_valid)             ? 1'b0: 1'b1;
+    assign  rst2_ = (i_unit_take && valid_out2_ && rs1_va_out2_ && rs2_va_out2_ && ~disp_valid) ||  rst3_   ? 1'b0: 1'b1;
+    assign  rst1_ = (i_unit_take && valid_out1_ && rs1_va_out1_ && rs2_va_out1_ && ~disp_valid) ||  rst2_   ? 1'b0: 1'b1;
+    assign  rst0_ = (i_unit_take && valid_out0_ && rs1_va_out0_ && rs2_va_out0_ && ~disp_valid) ||  rst1_   ? 1'b0: 1'b1;
 // Addr
     assign  addr_in3_ = disp_valid ? (disp_rs1_data + disp_imm) : (rs1_data_out3_ + imm_out3_);
     assign  addr_in2_ = disp_valid ? (rs1_data_out3_ + imm_out3_) : (rs1_data_out2_ + imm_out2_);
