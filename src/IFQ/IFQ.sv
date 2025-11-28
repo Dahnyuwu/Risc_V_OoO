@@ -69,7 +69,7 @@ module IFQ (
                 read_p <= {3'b000, disp_jmp_b_addr[3:2]};
 
             else 
-                if ((!ifq_empty && disp_rd_en) || up_by_)
+                if ((!ifq_empty && disp_rd_en) || (up_by_ && disp_rd_en))
                     read_p++;
   
 // Full and ifq_empty flags
