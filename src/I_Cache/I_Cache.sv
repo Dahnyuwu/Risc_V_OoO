@@ -27,7 +27,7 @@ module I_Cache (
     logic [127:0] rom[2**7:0];                   // Memory matrix 32 x 8
 
     initial
-        $readmemh("test2.txt", rom);                             // Load binary data from UART_RXTX.txt file
+        $readmemh("First_Code.txt", rom);                             // Load binary data from UART_RXTX.txt file
     
     assign icache_rd       = ifq_rd_en ? rom[ifq_PC_in] : 128'h0;
 

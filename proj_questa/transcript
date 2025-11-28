@@ -1,14 +1,26 @@
-# Compile of Issue_Unit.sv failed with 1 errors.
-# Compile of Memory_Manager.sv failed with 2 errors.
-# Compile of upperRAM.sv was successful.
-# 3 compiles, 2 failed with 3 errors.
+do run.do
+# Compile of Dec_Jmp_Bra.sv was successful.
+# Compile of Dispatch_Unit.sv was successful.
+# Compile of Dispatch_Unit_TB.sv was successful.
+# Compile of RST.sv was successful.
+# Compile of TAG_FIFO.sv was successful.
+# Compile of Datapath.sv was successful.
+# Compile of Datapath_TB.sv was successful.
+# Compile of I_Cache.sv was successful.
+# Compile of IFQ.sv was successful.
+# Compile of Dispatch_Control.sv was successful.
+# Compile of Issue_Queue.sv was successful.
+# Compile of Shift_Register.sv was successful.
+# Compile of Issue_Queue_TB.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of Issue_Queue_LS.sv was successful.
 # Compile of Issue_Unit.sv was successful.
-# Compile of Memory_Manager.sv failed with 1 errors.
-# 2 compiles, 1 failed with 1 error.
 # Compile of Memory_Manager.sv was successful.
-vsim -voptargs=+acc work.Datapath_TB
+# Compile of upperRAM.sv was successful.
+# Compile of Register_File.sv was successful.
+# 19 compiles, 0 failed with no errors.
 # vsim -voptargs="+acc" work.Datapath_TB 
-# Start time: 20:39:59 on Nov 08,2025
+# Start time: 19:01:01 on Nov 27,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -104,15 +116,40 @@ vsim -voptargs=+acc work.Datapath_TB
 # Loading work.Register(fast__72)
 # Loading work.Memory_Manager(fast)
 # Loading work.upperRAM(fast)
-do wave_datapath.do
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jdhuerta  Hostname: IDANNY-LAP  ProcessID: 14856
-#           Attempting to use alternate WLF file "./wlftmezfd0".
+#           Attempting to use alternate WLF file "./wlftzbtkff".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmezfd0
+#           Using alternate file: ./wlftzbtkff
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break key hit
+run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-8009) Loading existing optimized design _opt6
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
@@ -205,226 +242,6 @@ restart
 # Loading work.Register(fast__72)
 # Loading work.Memory_Manager(fast)
 # Loading work.upperRAM(fast)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 140 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 160 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-# Loading work.Memory_Manager(fast)
-# Loading work.upperRAM(fast)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 280 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# Compile of upperRAM.sv was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-# Loading work.Memory_Manager(fast)
-# Loading work.upperRAM(fast)
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 280 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 300 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
 # ** Warning: (vsim-8630) Infinity results from division operation.
 #    Time: 440 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
@@ -442,6 +259,259 @@ run
 run
 run
 run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 # Compile of Memory_Manager.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
@@ -544,17 +614,165 @@ run
 # ** Warning: (vsim-8630) Infinity results from division operation.
 #    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/IQLS/SR3/opcode_out
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-8009) Loading existing optimized design _opt6
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
@@ -651,24 +869,33 @@ run
 # ** Warning: (vsim-8630) Infinity results from division operation.
 #    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/MM/clk \
-sim:/Datapath_TB/UUT/ISU/MM/rst \
-sim:/Datapath_TB/UUT/ISU/MM/addr \
-sim:/Datapath_TB/UUT/ISU/MM/wd \
-sim:/Datapath_TB/UUT/ISU/MM/we \
-sim:/Datapath_TB/UUT/ISU/MM/rd \
-sim:/Datapath_TB/UUT/ISU/MM/ram_ \
-sim:/Datapath_TB/UUT/ISU/MM/upperRAM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# ** Note: (vsim-8009) Loading existing optimized design _opt6
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.Datapath_TB(fast)
 # Loading work.Datapath(fast)
@@ -765,123 +992,36 @@ run
 # ** Warning: (vsim-8630) Infinity results from division operation.
 #    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-add wave -position insertpoint  \
-sim:/Datapath_TB/UUT/ISU/MM/I1/wd \
-sim:/Datapath_TB/UUT/ISU/MM/I1/addr \
-sim:/Datapath_TB/UUT/ISU/MM/I1/we \
-sim:/Datapath_TB/UUT/ISU/MM/I1/rd
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.Datapath_TB(fast)
-# Loading work.Datapath(fast)
-# Loading work.I_Cache(fast)
-# Loading work.IFQ(fast)
-# Loading work.Register(fast)
-# Loading work.Register(fast__1)
-# Loading work.Dispatch_Unit(fast)
-# Loading work.Register_File(fast)
-# Loading work.Register(fast__2)
-# Loading work.Register(fast__3)
-# Loading work.Register(fast__4)
-# Loading work.Dec_Jmp_Bra(fast)
-# Loading work.Dispatch_Control(fast)
-# Loading work.TAG_FIFO(fast)
-# Loading work.Register(fast__5)
-# Loading work.Register(fast__6)
-# Loading work.Register(fast__7)
-# Loading work.Register(fast__8)
-# Loading work.Register(fast__9)
-# Loading work.Register(fast__10)
-# Loading work.Register(fast__11)
-# Loading work.Register(fast__12)
-# Loading work.Register(fast__13)
-# Loading work.Register(fast__14)
-# Loading work.Register(fast__15)
-# Loading work.Register(fast__16)
-# Loading work.Register(fast__17)
-# Loading work.Register(fast__18)
-# Loading work.Register(fast__19)
-# Loading work.Register(fast__20)
-# Loading work.Register(fast__21)
-# Loading work.Register(fast__22)
-# Loading work.Register(fast__23)
-# Loading work.Register(fast__24)
-# Loading work.Register(fast__25)
-# Loading work.Register(fast__26)
-# Loading work.Register(fast__27)
-# Loading work.Register(fast__28)
-# Loading work.Register(fast__29)
-# Loading work.Register(fast__30)
-# Loading work.Register(fast__31)
-# Loading work.Register(fast__32)
-# Loading work.Register(fast__33)
-# Loading work.Register(fast__34)
-# Loading work.Register(fast__35)
-# Loading work.Register(fast__36)
-# Loading work.Register(fast__37)
-# Loading work.Register(fast__38)
-# Loading work.Register(fast__39)
-# Loading work.Register(fast__40)
-# Loading work.Register(fast__41)
-# Loading work.Register(fast__42)
-# Loading work.Register(fast__43)
-# Loading work.Register(fast__44)
-# Loading work.Register(fast__45)
-# Loading work.Register(fast__46)
-# Loading work.Register(fast__47)
-# Loading work.Register(fast__48)
-# Loading work.Register(fast__49)
-# Loading work.Register(fast__50)
-# Loading work.Register(fast__51)
-# Loading work.Register(fast__52)
-# Loading work.Register(fast__53)
-# Loading work.Register(fast__54)
-# Loading work.Register(fast__55)
-# Loading work.Register(fast__56)
-# Loading work.Register(fast__57)
-# Loading work.Register(fast__58)
-# Loading work.Register(fast__59)
-# Loading work.Register(fast__60)
-# Loading work.Register(fast__61)
-# Loading work.Register(fast__62)
-# Loading work.Register(fast__63)
-# Loading work.Register(fast__64)
-# Loading work.Register(fast__65)
-# Loading work.Register(fast__66)
-# Loading work.Register(fast__67)
-# Loading work.Register(fast__68)
-# Loading work.RST(fast)
-# Loading work.Register_DW(fast)
-# Loading work.Issue_Queue(fast)
-# Loading work.Shift_Register(fast)
-# Loading work.Register(fast__69)
-# Loading work.Register(fast__70)
-# Loading work.Register(fast__71)
-# Loading work.Issue_Queue_LS(fast)
-# Loading work.Shift_Register_LW(fast)
-# Loading work.Issue_Unit(fast)
-# Loading work.Register(fast__72)
-# Loading work.Memory_Manager(fast)
-# Loading work.upperRAM(fast)
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# Compile of Issue_Queue_LS.sv was successful.
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Causality operation skipped due to absence of debug database file
+# Compile of Issue_Queue.sv was successful.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -983,11 +1123,147 @@ run
 # ** Warning: (vsim-8630) Infinity results from division operation.
 #    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
 run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Issue_Queue.sv was successful.
+# Compile of Issue_Queue_LS.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Register(fast__4)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.Register(fast__68)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# Loading work.Issue_Queue(fast)
+# Loading work.Shift_Register(fast)
+# Loading work.Register(fast__69)
+# Loading work.Register(fast__70)
+# Loading work.Register(fast__71)
+# Loading work.Issue_Queue_LS(fast)
+# Loading work.Shift_Register_LW(fast)
+# Loading work.Issue_Unit(fast)
+# Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.upperRAM(fast)
+run
 # ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 240 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 260 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
-# ** Warning: (vsim-8630) Infinity results from division operation.
-#    Time: 400 ns  Iteration: 3  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#98 File: C:/Quartus_Arqui/Dispatch/src/Issue/Issue_Unit.sv Line: 98
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run

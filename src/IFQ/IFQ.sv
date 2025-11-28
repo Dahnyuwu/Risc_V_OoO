@@ -78,9 +78,7 @@ module IFQ (
     assign zeros        = ~(I0_out_ || I1_out_ || I2_out_ || I3_out_);
 
 // Instruction selection for first load
-    // assign ifq_inst         = disp_rd_en ? ((ifq_empty || disp_jmp_b_va) ? rd_bypass : ((rd_reg == 32'b0) ? rd_bypass : rd_reg)) : 32'h0;
     assign {ifq_inst, up_by_}         = (rd_reg == 32'b0) ? {rd_bypass, 1'b1} : {rd_reg, 1'b0};
-    // assign ifq_inst         = disp_rd_en ? rd_reg : 32'h0;
 
 // Mux for first load
     assign rd_bypass    =   (read_p[1:0] == 2'b00) ?    icache_rd[127:96]:

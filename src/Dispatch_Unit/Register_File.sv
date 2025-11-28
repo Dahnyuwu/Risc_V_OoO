@@ -29,7 +29,6 @@ module Register_File(
         genvar i;
         for (i = 0; i < 32; i = i + 1) begin
             if (i == 0) begin
-                // Register 0 (x0) - Hardwired to zero, write disabled
                 Register RegisterZero(
                     .clk(clk),
                     .rst(rst),
@@ -39,9 +38,6 @@ module Register_File(
                 );
             end
             else if (i == 2) begin
-                // Special case: Register 2 (x2) - Stack Pointer
-                // Initialized to 0xFFFF_FFF0
-                // Register #(.RSTVALUE(32'hFFFF_FFF0)) RegisterSP(
                 Register #(.RSTVALUE(32'h7FFF_EFFC)) RegisterSP(
                     .clk(clk),
                     .rst(rst),
@@ -60,7 +56,6 @@ module Register_File(
                 );
             end
             else begin
-                // Standard registers
                 Register Register_file(
                     .clk(clk),
                     .rst(rst),

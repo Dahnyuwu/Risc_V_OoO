@@ -23,7 +23,8 @@ module Memory_Manager(
     logic   [31:0] ram_; 
     logic          upperRAM;
     assign rd =   upperRAM ? ram_  : 32'h0;
-    assign upperRAM = (addr >= 32'h1001_0000 && addr <= 32'hFFFF_FFF0)  ? 1'b1 : 1'b0;
+    assign upperRAM = 1'b1;
+    // assign upperRAM = (addr >= 32'h1001_0000 && addr <= 32'hFFFF_FFF0)  ? 1'b1 : 1'b0;
     // assign gpio     = (addr >= 32'h1001_0000 && addr < 32'h1001_1000)   ? 1'b1 : 1'b0;
     // assign lowerRAM = (addr >= 32'h1000_0000 && addr < 32'h1001_0000)   ? 1'b1 : 1'b0;
     // assign reserved = (addr >= 32'h0000_0000 && addr < 32'h0040_0000)   ? 1'b1 : 1'b0;
