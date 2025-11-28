@@ -98,3 +98,127 @@ Exception c0000005 has occurred at address 5131638f. Traceback:
 StackWalk failed 0
 # End of Stack Trace
 
+# Current time Fri Nov 28 14:54:48 2025
+# Program = vish
+# Id = "2022.4"
+# Version = "2022.10"
+# Date = "Oct 18 2022"
+# Platform = win64
+
+Exception c0000005 has occurred at address 140140618. Traceback:
+# 0    0x140140618: '<unknown (@0x140140618)>'
+# 1    0x140140970: '<unknown (@0x140140970)>'
+# 2    0x140141652: '<unknown (@0x140141652)>'
+# 3    0x140141b97: '<unknown (@0x140141b97)>'
+# 4    0x140143e62: '<unknown (@0x140143e62)>'
+# 5    0x14013a110: '<unknown (@0x14013a110)>'
+# 6    0x14012ad2b: '<unknown (@0x14012ad2b)>'
+# 7    0x14012eafb: '<unknown (@0x14012eafb)>'
+# 8    0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 9    0x7438a501: 'Tcl_EvalEx + 0xb01'
+# 10   0x7438bde2: 'Tcl_GlobalEval + 0x52'
+# 11   0x1401e1592: 'Mtirpc_Init + 0x53642'
+# 12   0x1401e1b72: 'Mtirpc_Init + 0x53c22'
+# 13   0x1401d6a1a: 'Mtirpc_Init + 0x48aca'
+# 14   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 15   0x7ffd5554f384: 'Itcl_EvalMemberCode + 0x384'
+# 16   0x7ffd5555035d: 'Itcl_ExecMethod + 0x20d'
+# 17   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 18   0x7ffd5554f384: 'Itcl_EvalMemberCode + 0x384'
+# 19   0x7ffd6f689f15: 'Itk_ConfigClassOption + 0x85'
+# 20   0x7ffd6f686fbe: 'Itk_ArchetypeInit + 0x5bbe'
+# 21   0x7ffd6f686733: 'Itk_ArchetypeInit + 0x5333'
+# 22   0x7ffd5554f28d: 'Itcl_EvalMemberCode + 0x28d'
+# 23   0x7ffd5555035d: 'Itcl_ExecMethod + 0x20d'
+# 24   0x7ffd555571b5: 'Itcl_EvalArgs + 0x1a5'
+# 25   0x7ffd55552baa: 'Itcl_HandleInstance + 0x29a'
+# 26   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 27   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 28   0x7ffd5554f384: 'Itcl_EvalMemberCode + 0x384'
+# 29   0x7ffd5555035d: 'Itcl_ExecMethod + 0x20d'
+# 30   0x7ffd555571b5: 'Itcl_EvalArgs + 0x1a5'
+# 31   0x7ffd55552baa: 'Itcl_HandleInstance + 0x29a'
+# 32   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 33   0x7447b104: 'TclServiceIdle + 0xb74'
+# 34   0x7447a5ff: 'TclServiceIdle + 0x6f'
+# 35   0x74440e13: 'Tcl_DoOneEvent + 0x193'
+# 36   0x741fa949: 'TkGetDisplayOf + 0x2609'
+# 37   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 38   0x7438a501: 'Tcl_EvalEx + 0xb01'
+# 39   0x7438aac8: 'Tcl_Eval + 0x38'
+# 40   0x140185492: '<unknown (@0x140185492)>'
+# 41   0x74386872: 'TclInvokeStringCommand + 0xc2'
+# 42   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 43   0x7438a501: 'Tcl_EvalEx + 0xb01'
+# 44   0x7442a1a1: 'Tcl_FSEvalFileEx + 0x1f1'
+# 45   0x7424d7e0: 'Tk_MainEx + 0x7a0'
+# 46   0x1401b1ed2: 'Mtirpc_Init + 0x23f82'
+# 47   0x1401b4eee: 'Mtirpc_Init + 0x26f9e'
+# 48   0x14079cf58: 'Tclsqlite3_Init + 0x1bd18'
+# 49   0x7ffd9a89259d: 'BaseThreadInitThunk + 0x1d'
+# 50   0x7ffd9bc2af78: 'RtlUserThreadStart + 0x28'
+StackWalk failed 0
+# End of Stack Trace
+
+# Current time Fri Nov 28 14:56:02 2025
+# Program = vish
+# Id = "2022.4"
+# Version = "2022.10"
+# Date = "Oct 18 2022"
+# Platform = win64
+
+Exception c0000005 has occurred at address 140140618. Traceback:
+# 0    0x140140618: '<unknown (@0x140140618)>'
+# 1    0x140140970: '<unknown (@0x140140970)>'
+# 2    0x140141652: '<unknown (@0x140141652)>'
+# 3    0x140141b97: '<unknown (@0x140141b97)>'
+# 4    0x140143e62: '<unknown (@0x140143e62)>'
+# 5    0x14013a110: '<unknown (@0x14013a110)>'
+# 6    0x14012ad2b: '<unknown (@0x14012ad2b)>'
+# 7    0x14012eafb: '<unknown (@0x14012eafb)>'
+# 8    0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 9    0x7438a501: 'Tcl_EvalEx + 0xb01'
+# 10   0x7438bde2: 'Tcl_GlobalEval + 0x52'
+# 11   0x1401e1592: 'Mtirpc_Init + 0x53642'
+# 12   0x1401e1b72: 'Mtirpc_Init + 0x53c22'
+# 13   0x1401d6a1a: 'Mtirpc_Init + 0x48aca'
+# 14   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 15   0x7ffd55bff384: 'Itcl_EvalMemberCode + 0x384'
+# 16   0x7ffd55c0035d: 'Itcl_ExecMethod + 0x20d'
+# 17   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 18   0x7ffd55bff384: 'Itcl_EvalMemberCode + 0x384'
+# 19   0x7ffd70c29f15: 'Itk_ConfigClassOption + 0x85'
+# 20   0x7ffd70c26fbe: 'Itk_ArchetypeInit + 0x5bbe'
+# 21   0x7ffd70c26733: 'Itk_ArchetypeInit + 0x5333'
+# 22   0x7ffd55bff28d: 'Itcl_EvalMemberCode + 0x28d'
+# 23   0x7ffd55c0035d: 'Itcl_ExecMethod + 0x20d'
+# 24   0x7ffd55c071b5: 'Itcl_EvalArgs + 0x1a5'
+# 25   0x7ffd55c02baa: 'Itcl_HandleInstance + 0x29a'
+# 26   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 27   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 28   0x7ffd55bff384: 'Itcl_EvalMemberCode + 0x384'
+# 29   0x7ffd55c0035d: 'Itcl_ExecMethod + 0x20d'
+# 30   0x7ffd55c071b5: 'Itcl_EvalArgs + 0x1a5'
+# 31   0x7ffd55c02baa: 'Itcl_HandleInstance + 0x29a'
+# 32   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 33   0x7447b104: 'TclServiceIdle + 0xb74'
+# 34   0x7447a5ff: 'TclServiceIdle + 0x6f'
+# 35   0x74440e13: 'Tcl_DoOneEvent + 0x193'
+# 36   0x741fa949: 'TkGetDisplayOf + 0x2609'
+# 37   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 38   0x7438a501: 'Tcl_EvalEx + 0xb01'
+# 39   0x7438aac8: 'Tcl_Eval + 0x38'
+# 40   0x140185492: '<unknown (@0x140185492)>'
+# 41   0x74386872: 'TclInvokeStringCommand + 0xc2'
+# 42   0x74388bfc: 'TclNRRunCallbacks + 0x5c'
+# 43   0x7438a501: 'Tcl_EvalEx + 0xb01'
+# 44   0x7442a1a1: 'Tcl_FSEvalFileEx + 0x1f1'
+# 45   0x7424d7e0: 'Tk_MainEx + 0x7a0'
+# 46   0x1401b1ed2: 'Mtirpc_Init + 0x23f82'
+# 47   0x1401b4eee: 'Mtirpc_Init + 0x26f9e'
+# 48   0x14079cf58: 'Tclsqlite3_Init + 0x1bd18'
+# 49   0x7ffd9a89259d: 'BaseThreadInitThunk + 0x1d'
+# 50   0x7ffd9bc2af78: 'RtlUserThreadStart + 0x28'
+StackWalk failed 0
+# End of Stack Trace
+

@@ -30,7 +30,7 @@ module Memory_Manager(
     // assign reserved = (addr >= 32'h0000_0000 && addr < 32'h0040_0000)   ? 1'b1 : 1'b0;
 
 // RAM
-    upperRAM            I1  (.clk(clk), .wd(wd), .we(we), .addr(addr[9:2]), .rd(ram_));
+    RAM            I1  (.clk(clk), .wd(wd), .we(we), .addr(addr[9:2]), .rd(ram_));
 
 
 endmodule
