@@ -1,0 +1,5 @@
+Warning (10268): Verilog HDL information at IFQ.sv(63): always construct contains both blocking and non-blocking assignments File: C:/Quartus_Arqui/Dispatch/src/IFQ/IFQ.sv Line: 63
+Warning (10268): Verilog HDL information at TAG_FIFO.sv(25): always construct contains both blocking and non-blocking assignments File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/TAG_FIFO.sv Line: 25
+Warning (10268): Verilog HDL information at TAG_FIFO.sv(34): always construct contains both blocking and non-blocking assignments File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/TAG_FIFO.sv Line: 34
+Info (10281): Verilog HDL Declaration information at RST.sv(3): object "rst" differs only in case from object "RST" in the same scope File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv Line: 3
+Info (10281): Verilog HDL Declaration information at RST.sv(16): object "token" differs only in case from object "Token" in the same scope File: C:/Quartus_Arqui/Dispatch/src/Dispatch_Unit/RST.sv Line: 16

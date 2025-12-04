@@ -1,0 +1,6 @@
+
+State Machine - |Datapath|Dispatch_Unit:DU|Dispatch_Control:DC|state
+Name state.keep state.stallf state.stallb 
+state.keep 0 0 0 
+state.stallb 1 0 1 
+state.stallf 1 1 0 

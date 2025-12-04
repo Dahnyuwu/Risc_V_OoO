@@ -22,7 +22,7 @@ module RST(
 
     genvar j;
     generate
-        for (j = 0; j < 32; j++) begin
+        for (j = 0; j < 32; j++) begin : RST
             assign w_ena_2[j] = (cdb_token[6] && token[j] == cdb_token);
         end
     endgenerate
@@ -132,7 +132,7 @@ module RST(
 // Registers generation with doble write data, write data 1 priority
     generate
         genvar i;
-        for (i = 0; i < 32; i = i + 1) begin
+        for (i = 0; i < 32; i = i + 1) begin : Token
             Register_DW #(.LENGTH(7)) Token(
                 .clk(clk),
                 .rst(rst),

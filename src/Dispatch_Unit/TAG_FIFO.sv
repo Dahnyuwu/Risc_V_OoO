@@ -47,7 +47,7 @@ module TAG_FIFO (
 // Registers generation 
     generate
         genvar i;
-        for (i = 0; i < 64; i = i + 1) begin
+        for (i = 0; i < 64; i = i + 1) begin : Tag
             Register #(.RSTVALUE(i), .LENGTH(6)) TAG_FIFO(
                 .clk(clk),
                 .rst(rst),

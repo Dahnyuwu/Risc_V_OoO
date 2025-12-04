@@ -75,7 +75,8 @@ module Issue_Unit(
                                 (issue_opcode_int == 3'b010) ?   (issue_rs1_int&issue_rs2_int)     :  // And
                                 (issue_opcode_int == 3'b011) ?   (issue_rs1_int|issue_rs2_int)     :  // Or
                                 (issue_opcode_int == 3'b100) ?   (issue_rs1_int<<issue_rs2_int)    :  // Sll
-                                (issue_opcode_int == 3'b101) ?   (issue_rs1_int-issue_rs2_int)>>31 :  // SLT
+                                // (issue_opcode_int == 3'b101) ?   (issue_rs1_int-issue_rs2_int)>>31 :  // SLT
+                                (issue_opcode_int == 3'b101) ?   (((issue_rs1_int-issue_rs2_int)>>31) ^ issue_rs1_int[31]) & (issue_rs1_int[31] ^ issue_rs2_int[31]):  // SLT
                                 (issue_opcode_int == 3'b110) ? ~|(issue_rs1_int-issue_rs2_int)     :  // BEQ
                                 (issue_opcode_int == 3'b111) ?  |(issue_rs1_int-issue_rs2_int)     :  // BNE
                                                                   32'b0;

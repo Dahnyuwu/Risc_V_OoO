@@ -22,7 +22,7 @@ module I_Cache (
 );
 
     logic [16:0] inst_0, inst_1, inst_2, inst_3;  
-    logic        inst_0_va, inst_1_va, inst_2_va, inst_3_va;;  
+    logic        inst_0_va, inst_1_va, inst_2_va, inst_3_va;  
     
     logic [127:0] rom[2**7:0];                   // Memory matrix 32 x 8
 
