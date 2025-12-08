@@ -42,7 +42,7 @@ module Issue_Unit(
     logic   [5:0]   i_unit_take_div_out_;
     logic   [3:0]   mux_sel;
     logic   [2:0]   i_unit_take_mul_out_;
-    logic           int_cdb_b_taken_, int_cdb_b_, iol_out_;
+    logic           int_cdb_b_taken_, int_cdb_b_, iol_out_, overflow_;
 
      
 // CDB Slot 
@@ -70,13 +70,15 @@ module Issue_Unit(
     Register #(.LENGTH(6)) DP (.clk(clk), .rst(rst), .ena(1'b1), .in({i_unit_take_div, i_unit_take_div_out_[5:1]}), .out(i_unit_take_div_out_)); 
 
 // Integer issue
+        assign  overflow_ = (((issue_rs1_int-issue_rs2_int)>>31) ^ issue_rs1_int[31]) & (issue_rs1_int[31] ^ issue_rs2_int[31]);
+
         assign  int_cdb_data_ = (issue_opcode_int == 3'b000) ?   (issue_rs1_int+issue_rs2_int)     :  // Add
                                 (issue_opcode_int == 3'b001) ?   (issue_rs1_int-issue_rs2_int)     :  // Sub
                                 (issue_opcode_int == 3'b010) ?   (issue_rs1_int&issue_rs2_int)     :  // And
                                 (issue_opcode_int == 3'b011) ?   (issue_rs1_int|issue_rs2_int)     :  // Or
                                 (issue_opcode_int == 3'b100) ?   (issue_rs1_int<<issue_rs2_int)    :  // Sll
-                                // (issue_opcode_int == 3'b101) ?   (issue_rs1_int-issue_rs2_int)>>31 :  // SLT
-                                (issue_opcode_int == 3'b101) ?   (((issue_rs1_int-issue_rs2_int)>>31) ^ issue_rs1_int[31]) & (issue_rs1_int[31] ^ issue_rs2_int[31]):  // SLT
+                                (issue_opcode_int == 3'b101) ?   (overflow_ ? 
+                                                                    {31'b0, issue_rs1_int[31]} : (issue_rs1_int-issue_rs2_int)>>31):           // SLT con overflow
                                 (issue_opcode_int == 3'b110) ? ~|(issue_rs1_int-issue_rs2_int)     :  // BEQ
                                 (issue_opcode_int == 3'b111) ?  |(issue_rs1_int-issue_rs2_int)     :  // BNE
                                                                   32'b0;
