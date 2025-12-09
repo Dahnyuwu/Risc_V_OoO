@@ -1,0 +1,136 @@
+do run.do
+# Compile of Datapath.sv was successful.
+# Compile of Datapath_TB.sv was successful.
+# Compile of Dec_Jmp_Bra.sv was successful.
+# Compile of Dispatch_Control.sv was successful.
+# Compile of Dispatch_Unit.sv was successful.
+# Compile of Dispatch_Unit_TB.sv was successful.
+# Compile of Register_File.sv was successful.
+# Compile of RST.sv was successful.
+# Compile of TAG_FIFO.sv was successful.
+# Compile of I_Cache.sv was successful.
+# Compile of IFQ.sv was successful.
+# Compile of Issue_Unit.sv was successful.
+# Compile of Issue_Queue.sv was successful.
+# Compile of Issue_Queue_LS.sv was successful.
+# Compile of Issue_Queue_TB.sv was successful.
+# Compile of Shift_Register.sv was successful.
+# Compile of Memory_Manager.sv was successful.
+# Compile of RAM.sv was successful.
+# Compile of Register.sv was successful.
+# 19 compiles, 0 failed with no errors.
+# vsim -voptargs="+acc" work.Datapath_TB 
+# Start time: 11:56:57 on Dec 09,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Dispatch_Control(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Datapath_TB(fast)
+# Loading work.Datapath(fast)
+# Loading work.I_Cache(fast)
+# Loading work.IFQ(fast)
+# Loading work.Register(fast)
+# Loading work.Register(fast__1)
+# Loading work.Dispatch_Unit(fast)
+# Loading work.Register_File(fast)
+# Loading work.Register(fast__2)
+# Loading work.Register(fast__3)
+# Loading work.Register(fast__4)
+# Loading work.Dec_Jmp_Bra(fast)
+# Loading work.Dispatch_Control(fast)
+# Loading work.TAG_FIFO(fast)
+# Loading work.Register(fast__5)
+# Loading work.Register(fast__6)
+# Loading work.Register(fast__7)
+# Loading work.Register(fast__8)
+# Loading work.Register(fast__9)
+# Loading work.Register(fast__10)
+# Loading work.Register(fast__11)
+# Loading work.Register(fast__12)
+# Loading work.Register(fast__13)
+# Loading work.Register(fast__14)
+# Loading work.Register(fast__15)
+# Loading work.Register(fast__16)
+# Loading work.Register(fast__17)
+# Loading work.Register(fast__18)
+# Loading work.Register(fast__19)
+# Loading work.Register(fast__20)
+# Loading work.Register(fast__21)
+# Loading work.Register(fast__22)
+# Loading work.Register(fast__23)
+# Loading work.Register(fast__24)
+# Loading work.Register(fast__25)
+# Loading work.Register(fast__26)
+# Loading work.Register(fast__27)
+# Loading work.Register(fast__28)
+# Loading work.Register(fast__29)
+# Loading work.Register(fast__30)
+# Loading work.Register(fast__31)
+# Loading work.Register(fast__32)
+# Loading work.Register(fast__33)
+# Loading work.Register(fast__34)
+# Loading work.Register(fast__35)
+# Loading work.Register(fast__36)
+# Loading work.Register(fast__37)
+# Loading work.Register(fast__38)
+# Loading work.Register(fast__39)
+# Loading work.Register(fast__40)
+# Loading work.Register(fast__41)
+# Loading work.Register(fast__42)
+# Loading work.Register(fast__43)
+# Loading work.Register(fast__44)
+# Loading work.Register(fast__45)
+# Loading work.Register(fast__46)
+# Loading work.Register(fast__47)
+# Loading work.Register(fast__48)
+# Loading work.Register(fast__49)
+# Loading work.Register(fast__50)
+# Loading work.Register(fast__51)
+# Loading work.Register(fast__52)
+# Loading work.Register(fast__53)
+# Loading work.Register(fast__54)
+# Loading work.Register(fast__55)
+# Loading work.Register(fast__56)
+# Loading work.Register(fast__57)
+# Loading work.Register(fast__58)
+# Loading work.Register(fast__59)
+# Loading work.Register(fast__60)
+# Loading work.Register(fast__61)
+# Loading work.Register(fast__62)
+# Loading work.Register(fast__63)
+# Loading work.Register(fast__64)
+# Loading work.Register(fast__65)
+# Loading work.Register(fast__66)
+# Loading work.Register(fast__67)
+# Loading work.Register(fast__68)
+# Loading work.RST(fast)
+# Loading work.Register_DW(fast)
+# Loading work.Issue_Queue(fast)
+# Loading work.Shift_Register(fast)
+# Loading work.Register(fast__69)
+# Loading work.Register(fast__70)
+# Loading work.Register(fast__71)
+# Loading work.Issue_Queue_LS(fast)
+# Loading work.Shift_Register_LW(fast)
+# Loading work.Issue_Unit(fast)
+# Loading work.Register(fast__72)
+# Loading work.Memory_Manager(fast)
+# Loading work.RAM(fast)
+# ** Error: Cannot open macro file: wave_datapath.do
+# Error in macro ./run.do line 3
+# Cannot open macro file: wave_datapath.do
+#     while executing
+# "do wave_datapath.do"
+do wave_datapath.do
+run
+# ** Warning: (vsim-8630) Infinity results from division operation.
+#    Time: 0 ns  Iteration: 2  Process: /Datapath_TB/UUT/ISU/#ASSIGN#101 File: C:/Quartus_Arqui/Risc_V_OoO/src/Issue/Issue_Unit.sv Line: 101
+run
+run
+run
+run
+run
+run
+run
+run

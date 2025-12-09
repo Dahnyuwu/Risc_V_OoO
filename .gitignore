@@ -1,2 +1,3 @@
-./proj_quartus
-./proj_questa/w*
+/proj_quartus
+/proj_questa/w*
+!/proj_questa/wave*
